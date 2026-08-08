@@ -1,0 +1,144 @@
+~ start
+=> start
+~ intro
+# Black background, white text, in an old/ancient but legible font.
+# Each line should fade in one by one. Let the player sit with each sentence. Then, fade them all to black.
+
+INTROTEXT: Hear us, lord of scales,
+INTROTEXT: We must empty Purgatory with our prayers
+INTROTEXT: and tired hearts.
+# 
+=> tutorial
+# Load into the main environment of the game -- the desk in front of the wasteland of purgatory.
+# TODO: Text progresses as you click it.
+# TODO:  Fairly fast read speed.
+# TODO: Add in speaking sound effect for both Angel and Devil.
+~ tutorial
+DEMON: First day on the job?
+DEMON: Heh, you're toast.
+
+ANGEL: Now, now, have a little faith in them!
+ANGEL: It's a relatively simple job.
+ANGEL: All you have to do is listen to their pleas for mercy,
+ANGEL: and weigh their virtues against their sins.
+ANGEL: If you view them favorably, raise them up to Heaven. 
+ANGEL: If not..
+
+DEMON: DRAG THEM DOWN TO HELL. HAHAHA.
+
+ANGEL: IF that seems like a big responsibility...
+
+DEMON: It is!
+
+ANGEL: But, like, no pressure.
+ANGEL: :)
+
+=> seamore
+
+~ seamore
+
+# Robert could stand to look really pitiful
+# He walks up/fades in.
+
+SEAMORE: ...
+SEAMORE: I'm just a little guy.
+
+# TODO: ANGEL UI - VIRTUE - Fed pigeons fresh bread.
+# TODO: DEMON UI - SIN - Foreclosed over ten thousand homes as real estate adjustor.
+# TODO: Upon pickup, triggers only once: UI SEAMORE PICKUP EXCLAMATION - *quivering* 
+
+- Drag to Heaven
+	ANGEL: That was an interesting decision...
+	$> DialogueDump.points -= 1
+	=> seamoreheaven
+- Drag to HelL 
+	$> DialogueDump.points += 1
+	=> seamorehell
+	
+~ seamoreheaven
+
+DEMON: Heheheh.
+
+ANGEL: What are you laughing about?
+
+DEMON: The new guy has a sense of humor.
+
+=> robinson
+
+~ seamorehell
+
+DEMON: I can't wait to torture that guy! 
+
+ANGEL: That was a wise decision.
+ANGEL: Keep up the good work.
+=> robinson
+
+~ robinson
+
+ROBINSON: God-damned, no-good surgeons…
+ROBINSON: Well, there's no point in delaying it now
+
+# TODO: ANGEL UI - VIRTUE - Always returned the shopping cart. 
+# TODO: DEMON UI - SIN - Disowned his only son.
+# TODO: Upon pickup, triggers only once: UI ROBINSON PICKUP EXCLAMATION - Oh, just get it over with!
+
+- Drag to Heaven
+	ANGEL: 
+	$> DialogueDump.points -= 1
+	=> robinsonheaven
+- Drag to HelL 
+	DEMON: 
+	$> DialogueDump.points += 1
+	=> robinsonhell
+	
+~ robinsonheaven
+
+ANGEL: It's difficult, but I can see the good in him. 
+
+=> angela
+
+~ robinsonhell
+
+DEMON: Did it feel good to do that?  
+
+=> angela
+
+~ angela
+
+ANGELA: E-E-Excuse me?
+ANGELA: Is i-it too much to ask you to put me with m-my brother?
+
+# TODO: ANGEL UI - VIRTUE - Adopted eight stray cats.
+# TODO: DEMON UI - SIN - Pulled the plug on her brother.
+# TODO: Upon pickup, triggers only once: UI ANGELA PICKUP EXCLAMATION - Robby? Robby, where are you?
+
+- Drag to Heaven
+	# MAYBE angel dialogue
+	$> DialogueDump.points -= 1
+	=> angelaheaven
+- Drag to HelL 
+	# MAYBE devil dialogue
+	$> DialogueDump.points += 1
+	=> angelahell
+	
+	~ angelaheaven
+	
+	ANGEL: Really?
+	ANGEL: Who was she to decide who lives and who dies? 
+	ANGEL: You really need to think harder about these things...
+	=> treymour
+	
+	~ angelahell
+	
+	DEMON: Are you kidding me? 
+	DEMON: Don't waste my time with stupid sins like that.
+	=> treymour
+	
+	~ treymour
+	
+	
+	
+	
+	
+	
+	
