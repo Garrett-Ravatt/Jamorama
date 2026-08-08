@@ -1,0 +1,49 @@
+~ robertplea
+
+# Robert could stand to look really pitiful
+# He walks up/fades in.
+
+ROBERT: Good evening.
+ROBERT: Take your time.
+
+# TODO: ANGEL UI - VIRTUE - Always wiped his shoes before going inside.
+# TODO: DEMON UI - SIN - Disowned their only son.
+# TODO: Upon pickup, triggers only once: UI PICKUP EXCLAMATION - Please, please! I-I'm just a little guy!
+
+- Drag to Heaven
+	ANGEL: That was an interesting decision...
+	$> DialogueDump.points -= 1
+	=> draggedroberttoheaven
+- Drag to HelL 
+	$> DialogueDump.points += 1
+	=> draggedroberttohell
+	
+~ draggedroberttoheaven
+
+DEVIL: Heheheh.
+
+ANGEL: What are you laughing about?
+
+DEVIL: The new guy has a sense of humor.
+
+=> hubertsplea
+
+
+~ draggedroberttohell
+
+DEVIL: I can't wait to torture that guy! 
+
+ANGEL: That was a wise decision.
+ANGEL: Keep up the good work.
+
+
+
+
+
+	
+	
+	
+- Start again => intro/introandtutorial
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END

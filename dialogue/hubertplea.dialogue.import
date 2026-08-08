@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dacj86eiomwvk"
+path="res://.godot/imported/hubertplea.dialogue-18efe4df9b0a87793203622d19a4406a.tres"
+
+[deps]
+
+source_file="res://dialogue/hubertplea.dialogue"
+dest_files=["res://.godot/imported/hubertplea.dialogue-18efe4df9b0a87793203622d19a4406a.tres"]
+
+[params]
+
+defaults=true
