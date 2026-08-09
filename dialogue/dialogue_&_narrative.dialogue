@@ -1,0 +1,306 @@
+~ start
+=> start
+~ intro
+# Black background, white text, in an old/ancient but legible font.
+# Each line should fade in one by one. Let the player sit with each sentence. Then, fade them all to black.
+
+INTROTEXT: Hear us, lord of scales,
+INTROTEXT: We must empty Purgatory with our prayers
+INTROTEXT: and tired hearts.
+# 
+=> tutorial
+# Load into the main environment of the game -- the desk in front of the wasteland of purgatory.
+# TODO: Text progresses as you click it.
+# TODO: Fairly fast read speed.
+# TODO: Add in speaking sound effect for both Angel and Devil.
+~ tutorial
+DEMON: First day on the job?
+DEMON: Heh, you're toast.
+
+ANGEL: Now, now, have a little faith in them!
+ANGEL: It's a relatively simple job.
+ANGEL: All you have to do is listen to their pleas for mercy,
+ANGEL: and weigh their virtues against their sins.
+ANGEL: If you view them favorably, raise them up to Heaven. 
+ANGEL: If not...
+
+DEMON: DRAG THEM DOWN TO HELL. HAHAHA.
+
+ANGEL: IF that seems like a big responsibility...
+
+DEMON: It is!
+
+ANGEL: But, like, no pressure.
+ANGEL: :)
+ANGEL: Oh, and by the way, if you ever need council on your decsions... 
+
+DEMON: They can't hear us.
+
+=> seamore
+
+~ seamore
+
+# Seamore could stand to look really pitiful
+# He walks up/fades in.
+
+SEAMORE: ...
+SEAMORE: I'm just a little guy.
+
+# TODO: ANGEL UI - VIRTUE - Best Accountant in San Diego 2014 - 2019.
+# TODO: DEMON UI - SIN - Did somebody's taxes "wrong" in 2020.
+# TODO: Upon pickup, triggers only once: UI SEAMORE PICKUP EXCLAMATION - *quivering* 
+
+- Drag to Heaven
+	$> DialogueDump.demonending +=1
+	=> seamoreheaven
+- Drag to Hell 
+	$> DiaglogueDump.trueending += 1
+	$> DialogueDump.angelending +=1
+	=> seamorehell
+	
+~ seamoreheaven
+
+ANGEL: Interesting decision...
+
+DEMON: Heheheh.
+
+ANGEL: What are you laughing about?
+
+DEMON: The new guy has a sense of humor.
+
+=> robinson
+
+~ seamorehell
+
+DEMON: I can't wait to torture that guy! 
+
+ANGEL: That was a wise decision.
+ANGEL: Keep up the good work. :)
+
+=> robinson
+
+~ robinson
+
+ROBINSON: God-damned, no-good surgeons…
+ROBINSON: Well, there's no point in delaying it now.
+
+# TODO: ANGEL UI - VIRTUE - Always returned the shopping cart. 
+# TODO: DEMON UI - SIN - Disowned his children.
+# TODO: Upon pickup, triggers only once: UI ROBINSON PICKUP EXCLAMATION - Oh, just get it over with!
+
+- Drag to Heaven
+	ANGEL:
+	$> DialogueDump.demonending +=1
+	$> DialogueDump.trueending += 1
+	=> robinsonheaven
+- Drag to Hell
+	$> DialogueDump.angelending += 1
+	=> robinsonhell
+	
+~ robinsonheaven
+
+ANGEL: Even with...
+ANGEL: Very well. 
+ANGEL: It's difficult, but I can see the good in him.
+
+DEMON: Damn it!
+
+=> angela
+
+~ robinsonhell
+
+ANGEL: Nicely done.
+
+DEMON: Wonderful. 
+
+=> angela
+
+~ angela
+
+ANGELA: E-E-Excuse me?
+ANGELA: Is i-it too much to ask you to put me with m-my brother?
+
+# TODO: ANGEL UI - VIRTUE - Adopted eight stray cats.
+# TODO: DEMON UI - SIN - Pulled the plug on her brother.
+# TODO: Upon pickup, triggers only once: UI ANGELA PICKUP EXCLAMATION - Robby? Robby, where are you?
+
+- Drag to Heaven
+	# MAYBE angel dialogue
+	$> DialogueDump.truending += 1
+	$> DialogueDump.demonending +=1
+	=> angelaheaven
+- Drag to Hell
+	# MAYBE devil dialogue
+	$> DialogueDump.angelending += 1
+		=> angelahell
+	
+~ angelaheaven
+ANGEL: Really?
+ANGEL: Who was she to decide who lives and who dies? 
+ANGEL: You need to think harder about these things...
+=> treymour
+	
+~ angelhell
+DEMON: Everybody thinks I prefer to torment bad [#italicize 'bad'] people.
+DEMON: But that's hardly true.
+DEMON: What I mean to say is...
+DEMON: You're good at this.
+=> treymour
+	
+~ treymour
+TREYMOUR: I'm sorry, I'm so sorry...
+TREYMOUR: ... Oh, God... God, forgive me...
+
+# TODO: ANGEL UI - VIRTUE - Forgave his father for disowning him.
+# TODO: DEMON UI - SIN - Murdered his sister.
+# TODO: Upon pickup, triggers only once: UI TREYMOUR PICKUP EXCLAMATION - Go on. Do it. 
+
+- Drag to Heaven
+	# MAYBE angel popup dialogue
+	$> DialogueDump.demonending +=1
+	=> treymourheaven
+
+- Drag to Hell 
+	# MAYBE devil popup dialogue
+	$> DialogueDump.trueending += 1
+	$> DialogueDump.angelending += 1
+	=> treymourhell
+	
+~ treymourheaven
+ANGEL: A murderer?! In Heaven?!
+
+DEMON: HAHAHA. AMAZING.
+
+ANGEL: It's not just about the people here.  
+ANGEL: Think about the people already in Heaven.
+ANGEL: A little mercy is good, but too much... 
+ANGEL: I don't want to report you to management, but I will. 
+	
+=> chloe
+	
+~ treymourhell
+
+DEMON: Mm, what delectable guilt.
+
+=> chloe
+	
+~ chloe
+	
+CHLOE: I was murdered.
+CHLOE: So, yeah, you know what to do.
+	
+# TODO: ANGEL UI - VIRTUE - Was a Red Cross doctor.
+# TODO: DEMON UI - SIN - Framed her brother for $900,000 in tax fraud.
+
+#TODO: ANGEL UI, POPUP TIMED DIALOGUE - Oh, go ahead and send his person to Heaven. 
+#TODO: ANGEL UI, POPUP TIMED DIALOGUE - Management's got you covered on this one.
+
+# TODO: Upon pickup, triggers only once: UI CHLOE PICKUP EXCLAMATION - Finally. This place is so drab.
+
+- Drag to Heaven
+	# MAYBE angel popup dialogue
+	$> DialogueDump.angelending += 1
+	=> chloeheaven
+- Drag to Hell 
+	# MAYBE devil popup dialogue
+	$> DialogueDump.trueending += 1
+	=> chloehell
+	
+~ chloeheaven
+
+if DialogueDump.angelending >= 5
+	ANGEL: There are few people who can put their personal feelings aside.
+	ANGEL: And make the right decision.
+	ANGEL: You made the right decision five times in a row.
+	ANGEL: I'm so proud of you.
+	
+	DEVIL: It's the only [#italicize 'only'] right decision you made all day.
+	
+	=> angelending
+
+else DialogueDump.angelending <= 4
+	ANGEL: I know these decisions may feel unfair... 
+	ANGEL: But are times when mercy is fairer because it's random.
+	=> endingchecks
+
+~ chloehell
+ANGEL: Do you have no heart?
+ANGEL: Haven't you sent enough people to the pit today?
+
+DEMON: Don't listen to her.
+DEMON: I think you sent that girl exactly where she needs to be.
+=> endingchecks
+
+~ endingchecks
+if DialogueDump.demonending == 5
+	=> demonending
+else 
+	if DialogueDump.trueending == 5
+		=> trueending
+	else 
+		=> purgatoryending 
+
+~ angelending
+# TODO: angelending_letter UI/asset - angelic seal/letterhead on corporate paper
+# Offer of Ascension
+# Most know that Heaven is not for everyone, few understand it's not for most of anyone.
+# By delivering all Heavenly candidates to Hell -- except for those explitly instructed -- 
+# you've demonstrated a deep understanding of the difficult nature of Heaven. We would therefore like to offer you 
+# the position of Junior Angel - Choir II. 
+# Congratulations, and we look forward to your response.
+# Sincerely,
+# The Department of Heaven
+
+~ demonending
+ANGEL: I'm happy you could make the right decision. 
+ANGEL: But I'm afraid you made it too late.
+ANGEL: [# betrayed] I've already... I've already lodged a complaint with management. [#melodramatic sniffle] 
+
+DEMON: Don't listen to goody-goody.
+DEMON: So what if you lose your job here?
+DEMON: I'll put in a word for you downstairs...
+ 
+# TODO: demonending_letter UI/asset - angelic seal/letterhead on corporate paper
+# Offer of Inequity 
+# It came to our attention that your position as Purgatory Officer was recently terminated, due to a rebellion among the recent entrees into Heaven. 
+# Their loss. Far more delicious than sending bad people to Hell is sending bad people to Heaven. 
+# You understand the nature of discord; and we therefor offer you the position of Baron of Hell. 
+# We look forward to seeing you among our ranks. 
+
+# Deliciously,
+# The Directorate of Hell
+
+~ purgatoryending
+ANGEL: Well, I guess I can't complain.
+
+DEMON: Some good decisions, some bad decisions.
+DEMON: And isn't that a kind balance in itself?
+	
+# TODO: purgatoryending_letter UI/asset - purgatory seal/symbol/lettehead
+# Recognition of Standing Service
+# The Office of Purgatory would like to recognize your performance.
+# Both heavenly and infernal departments noted your ability to maintain the illusion of choice while enforcing the status quo.
+# You understand balance needs no progress.
+# Keep up the mediocre work.
+
+# Lukewarmly, 
+# The Office of Purgatory
+
+~ trueending
+#TODO: trueending_letter UI/asset - purgatory seal/letterhead on corporate paper
+# Notice of Termination
+# This letter confirms that your employment with the Office of Purgatory is terminated effective immediately.
+# After multiple warnings, both angelic and infernal departments complained their Purgatory Officer was "uncoorperative and inadvisable."
+# This is not a condemnation of you personally, but your personal morality aligns with neither Heaven or Hell
+# and for that reason you are hereby relieved of the weight of all judgement.
+
+# Lukewarmly, 
+#The Office of Purgatory
+
+
+	
+	
+	
+	
+	
+	
