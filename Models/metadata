@@ -1,0 +1,158 @@
+{
+	"assetNamespace": "fab",
+	"listing":
+	{
+		"averageRating": 0,
+		"createdAt": "",
+		"description": "<p>High-poly model of a vintage desk lamp in .FBX and native .BLEND format. Modelled in Blender and textured using Quixel Mixer. All materials have been baked into albedo/roughness/metallic/oppacity maps. The texture resolution is 4k.</p>",
+		"isAiForbidden": false,
+		"isAiGenerated": false,
+		"lastUpdatedAt": "",
+		"listingType": "3d-model",
+		"media": "https://media.fab.com/image_previews/gallery_images/41f6d999-d41b-4580-be3c-87549167eec3/8fdb9e1e-1a69-4c21-8a3b-37c21e9053ba.png",
+		"publishedAt": "2025-11-14T16:14:01.927925Z",
+		"reviewCount": 0,
+		"thumbnail": "https://media.fab.com/image_previews/gallery_images/08da96a2-6d56-4cc5-8598-ebe30d1086e7/a73c204b-7c06-49c7-90ed-a43d91c1c2b9.png",
+		"title": "Vintage desk lamp",
+		"uid": "382415ac-049e-463a-8ce6-1798d62b955c",
+		"updatedAt": "",
+		"user":
+		{
+			"coverImageUrl": "",
+			"profileImageUrl": "",
+			"sellerName": "dusan.lamos",
+			"uid": "c5fb9ded-619e-42f0-98e2-8dd39cf60fa0"
+		},
+		"tags": [
+			{
+				"name": "Retro",
+				"slug": "retro",
+				"uid": "01b64ec5-7261-4c99-a280-a34680f1af03"
+			},
+			{
+				"name": "Lighting",
+				"slug": "lighting",
+				"uid": "2266ec39-d0f5-4872-a869-8bc93085298d"
+			},
+			{
+				"name": "Vintage",
+				"slug": "vintage",
+				"uid": "8a4d973f-aaa6-411d-b342-e09e1f212f63"
+			},
+			{
+				"name": "Old",
+				"slug": "old",
+				"uid": "975b1521-db01-43ed-a939-c2c2da5027b1"
+			},
+			{
+				"name": "Office",
+				"slug": "office",
+				"uid": "97e8ad1e-f7c1-4bc3-9293-bb9f268d5d60"
+			},
+			{
+				"name": "Banker",
+				"slug": "banker",
+				"uid": "bc692292-d7f8-494b-b4ca-517a7a1c7482"
+			},
+			{
+				"name": "Lamp",
+				"slug": "lamp",
+				"uid": "d7b5e9ca-33f3-46fe-bed5-c2fb5d989087"
+			},
+			{
+				"name": "Brass",
+				"slug": "brass",
+				"uid": "e48221d1-6741-49db-abcb-d1e3e6300a72"
+			}
+		],
+		"category":
+		{
+			"name": "Furniture & Fixtures",
+			"path": "furniture-fixtures",
+			"slug": "furniture-fixtures",
+			"uid": "3da1d2bd-49b4-4bc5-90e5-d31dadec3bd0"
+		},
+		"assetFormats": [
+			{
+				"assetFormatType":
+				{
+					"name": "FBX",
+					"groupName": "3D Exchange Formats",
+					"code": "fbx",
+					"icon": "cube",
+					"extensions": [
+						"fbx"
+					]
+				}
+			},
+			{
+				"assetFormatType":
+				{
+					"name": "Converted Files",
+					"groupName": "",
+					"code": "converted-files",
+					"icon": "cube",
+					"extensions": [
+						"gltf",
+						"glb",
+						"usdz"
+					]
+				}
+			},
+			{
+				"assetFormatType":
+				{
+					"name": "OBJ",
+					"groupName": "3D Exchange Formats",
+					"code": "obj",
+					"icon": "cube",
+					"extensions": [
+						"obj"
+					]
+				}
+			},
+			{
+				"assetFormatType":
+				{
+					"name": "Blender",
+					"groupName": "3D DCC Formats",
+					"code": "blender",
+					"icon": "blender",
+					"extensions": [
+						"blend"
+					]
+				}
+			},
+			{
+				"assetFormatType":
+				{
+					"name": "Additional files",
+					"groupName": "Other Formats",
+					"code": "additional-files",
+					"icon": "file",
+					"extensions": [
+						"zip"
+					]
+				}
+			}
+		],
+		"_PluginMetas":
+		{
+			"apiDataVersion": "0.0.1",
+			"entitlementUid": "2bce45b3-dcc4-4d6e-b535-96b6f74783a8",
+			"cacheSize": 0,
+			"downloaded": []
+		}
+	},
+	"target": "",
+	"quality": "",
+	"format": "fbx",
+	"fileId": "85c37781-9a48-4e0d-a5dc-75fbb68854d2",
+	"platformIncluded": "",
+	"distributionPointBaseUrls": [],
+	"distributionMethod": "",
+	"entitlementUid": "2bce45b3-dcc4-4d6e-b535-96b6f74783a8",
+	"invertedNormal": false,
+	"isConverted": false,
+	"isQuixel": false
+}

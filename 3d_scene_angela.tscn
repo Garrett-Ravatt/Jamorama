@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vgsuabfcqee6"]
 
-[ext_resource type="PackedScene" uid="uid://vorrq5ikuvvv" path="res://Models/model.fbx" id="1_6pkvk"]
+[ext_resource type="PackedScene" uid="uid://c75ktaioca62g" path="res://Scene Objects/AntiqueTable.tscn" id="1_6pkvk"]
+[ext_resource type="PackedScene" uid="uid://cjrv432caiboh" path="res://Models/desk_lamp.fbx" id="1_slvn6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slvn6"]
 
@@ -18,13 +19,14 @@ sky = SubResource("Sky_6pkvk")
 [node name="3DScene_Angela" type="Node3D" unique_id=351432302]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1729677590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0348607, 0.69348514)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97422314, 1.8360779)
+fov = 16.7
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=249343718]
 environment = SubResource("Environment_56htp")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=559938074]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 4.0937285, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -290.331)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1738929668]
 
@@ -32,7 +34,11 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 4
 shape = SubResource("WorldBoundaryShape3D_qxthg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=766832559]
-transform = Transform3D(26.37, 0, 0, 0, 0.916, 0, 0, 0, 50, 0, 0, -39.973335)
+transform = Transform3D(314.479, 0, 0, 0, 1.183, 0, 0, 0, 924.6644, 0, 0, -859.1373)
 mesh = SubResource("PlaneMesh_6y4ci")
 
-[node name="AntiqueTable" parent="." unique_id=1043766945 instance=ExtResource("1_6pkvk")]
+[node name="model" parent="." unique_id=1447024193 instance=ExtResource("1_6pkvk")]
+transform = Transform3D(0.61669344, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="desk_lamp" parent="." unique_id=1918832964 instance=ExtResource("1_slvn6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36724433, 0.8096219, -0.18711632)
