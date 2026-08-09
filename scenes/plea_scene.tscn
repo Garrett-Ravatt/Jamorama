@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://7k8yy1xhapov"]
 
 [ext_resource type="PackedScene" uid="uid://i63d6xxa0o14" path="res://ui/free_balloon.tscn" id="1_qvq12"]
+[ext_resource type="Texture2D" uid="uid://4yja6l7qn2b2" path="res://ui/Heaven_Bar_Expand.png" id="2_cee6c"]
+[ext_resource type="Script" uid="uid://dxo1j6cy0syca" path="res://scenes/slot.gd" id="3_gic2n"]
+[ext_resource type="Texture2D" uid="uid://dfv0cju70exxk" path="res://ui/Hel_Bar_Expand.png" id="4_lneks"]
+[ext_resource type="Texture2D" uid="uid://cf41uyu4dunt5" path="res://icon.svg" id="5_gic2n"]
+[ext_resource type="Script" uid="uid://befiy3svu1qbg" path="res://scenes/drag_object.gd" id="5_lsh2j"]
 
 [sub_resource type="Theme" id="Theme_hr8qf"]
 default_font_size = 11
@@ -19,6 +24,7 @@ grow_vertical = 2
 theme = SubResource("Theme_hr8qf")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=1114378490]
+visible = false
 custom_minimum_size = Vector2(0, 266.455)
 layout_mode = 1
 anchors_preset = 12
@@ -57,17 +63,58 @@ visible = false
 
 [node name="PleaBalloon" parent="CanvasLayer/Control" unique_id=102877299 instance=ExtResource("1_qvq12")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 175.0
-offset_top = 226.0
-offset_right = 977.0
-offset_bottom = 226.0
+offset_left = 172.0
+offset_top = 295.0
+offset_right = 974.0
+offset_bottom = 295.0
 grow_horizontal = 1
 grow_vertical = 1
 size_flags_vertical = 0
+
+[node name="TopBar" type="TextureRect" parent="CanvasLayer/Control" unique_id=1686957876]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 136.0
+grow_horizontal = 2
+texture = ExtResource("2_cee6c")
+script = ExtResource("3_gic2n")
+newTexture = ExtResource("5_gic2n")
+
+[node name="BottomBar" type="TextureRect" parent="CanvasLayer/Control" unique_id=750285517]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_lneks")
+script = ExtResource("3_gic2n")
+newTexture = ExtResource("5_gic2n")
+
+[node name="Test Drag" type="TextureRect" parent="CanvasLayer/Control" unique_id=1027525724]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 58)
+texture = ExtResource("5_gic2n")
+script = ExtResource("5_lsh2j")
 
 [editable path="CanvasLayer/Control/MarginContainer/DevilBalloon"]
 [editable path="CanvasLayer/Control/MarginContainer/AngelBalloon"]
