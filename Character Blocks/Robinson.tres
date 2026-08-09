@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoulData" format=3 uid="uid://cayjidgkgviub"]
+
+[ext_resource type="Script" uid="uid://dbr2jk0a1lug5" path="res://Character Blocks/soul_data.gd" id="1_ndxos"]
+
+[resource]
+script = ExtResource("1_ndxos")
+sins = Array[String](["Disowned and disinherited his only son."])
+virtues = Array[String](["Always returned the shopping cart."])
+id = 1
+name = "Robinson"
+introductionStatement = "God-damned, no-good surgeons…Well, there’s no point in delaying it now."
+pickupExclimation = "Oh, just make it quick!"
+metadata/_custom_type_script = "uid://dbr2jk0a1lug5"

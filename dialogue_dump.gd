@@ -6,3 +6,25 @@ extends Node
 @export var angelending := 0
 
 @export var demonending := 0
+
+var audio_streams : Dictionary[String, AudioStream] = {}
+
+var players : Dictionary[String, AudioStreamPlayer] = {}
+
+var ab : FreeBalloon
+var pb : FreeBalloon
+var db : FreeBalloon
+
+func play_aud(s):
+	var p := AudioStreamPlayer.new()
+	add_child(p)
+	p.stream = audio_streams[s]
+	p.play()
+	p.finished.connect(func(): stop_aud(s))
+	players[s] = p
+
+func stop_aud(s):
+	if players.has(s):
+		players[s].stop()
+		players[s].queue_free()
+		players.erase(s)
