@@ -14,8 +14,10 @@ INTROTEXT: and tired hearts.
 # TODO: Fairly fast read speed.
 # TODO: Add in speaking sound effect for both Angel and Devil.
 ~ tutorial_demon_1
+$> repeat_sound("res://audio/devil_talking.wav")
 DEMON: First day on the job? [next=auto]
 DEMON: Heh, you're toast.
+$> stop_sound("res://audio/devil_talking.wav")
 $> %AngelBubble.play("res://dialogue_&_narrative.dialogue", "tutorial_angel_1")
 => END
 
