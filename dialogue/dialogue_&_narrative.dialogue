@@ -37,7 +37,7 @@ $> DialogueDump.ab.start(null, "tutorial_angel_2")
 => END
 
 ~ tutorial_angel_2
-ANGEL: IF that seems like a big responsibility...
+ANGEL: If that seems like a big responsibility...
 $> DialogueDump.db.start(null, "tutorial_demon_3")
 => END
 
@@ -69,8 +69,6 @@ $> DialogueDump.pb.start(null, "seamore")
 SEAMORE: ...
 SEAMORE: I'm just a little guy.
 $> DialogueDump.pb.hide()
-=> END
-
 
 # TODO: ANGEL UI - VIRTUE - Best Accountant in San Diego 2014 - 2019.
 # TODO: DEMON UI - SIN - Did somebody's taxes "wrong" in 2020.
@@ -130,7 +128,6 @@ $> DialogueDump.pb.start(null, "robinson")
 ROBINSON: God-damned, no-good surgeons…
 ROBINSON: Well, there's no point in delaying it now.
 $> DialogueDump.pb.hide()
-=> END
 
 # TODO: ANGEL UI - VIRTUE - Always returned the shopping cart. 
 # TODO: DEMON UI - SIN - Disowned his children.
