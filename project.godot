@@ -11,20 +11,15 @@ config_version=5
 [application]
 
 config/name="Jamorama"
-run/main_scene="uid://7k8yy1xhapov"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
-<<<<<<<HEADrun/main_scene="uid://7k8yy1xhapov"
 
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
-DialogueDump="*uid://bq1iq0ni5n2dk"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -34,7 +29,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/script-v1.dialogue", "res://dialogue/dialogue_&_narrative.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/example_demon_angel.dialogue")
 
 [physics]
 
