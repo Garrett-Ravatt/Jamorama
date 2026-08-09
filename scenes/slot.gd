@@ -25,6 +25,12 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	peopleImages[people].scale = Vector2(1,1)
 	#peopleImages[people].set_script(load("res://scenes/person_hop.gd"))
 	peopleImages[people].type = type
+	var pb = DialogueDump.pb
+	if type == 0:
+		pb.next(pb.dialogue_line.responses[0].next_id)
+		
+	if type == 1:
+		pb.next(pb.dialogue_line.responses[1].next_id)
 	
 	add_child(peopleImages[people])
 	
