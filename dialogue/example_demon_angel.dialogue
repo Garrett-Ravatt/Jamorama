@@ -1,0 +1,9 @@
+~ start
+Dumby: Pease don't send me to funky town :(
+$> %DevilBalloon.start("res::dialogue/example_demon_angel.dialogue", "devil_aside")
+Dumby: It would be sooooo bad.
+=> END
+
+~ devil_aside
+Devil: Send him to funnky town >:) [next=auto]
+=> END
