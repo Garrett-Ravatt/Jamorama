@@ -2,6 +2,7 @@ extends TextureRect
 
 var people := 1
 var peopleImages: Dictionary[int,TextureRect] = {}
+var rand = RandomNumberGenerator.new()
 @export var newTexture: Texture
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
@@ -14,7 +15,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	peopleImages[people] = TextureRect.new()
 	peopleImages[people].texture = newTexture 
 	peopleImages[people].pivot_offset_ratio = Vector2(.5,1)
-	
+	peopleImages[people].position.x += rand.randf_range(-500,500)
 	peopleImages[people].anchor_top = 0
 	peopleImages[people].anchor_left = 0.5
 	peopleImages[people].anchor_right = .5
