@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7k8yy1xhapov"]
 
 [ext_resource type="PackedScene" uid="uid://i63d6xxa0o14" path="res://ui/free_balloon.tscn" id="1_qvq12"]
+[ext_resource type="Resource" uid="uid://cnpsfecad5k7h" path="res://dialogue/example_demon_angel.dialogue" id="2_7vsvl"]
 
 [sub_resource type="Theme" id="Theme_hr8qf"]
 default_font_size = 11
@@ -36,6 +37,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+will_block_other_input = false
+next_action = &""
+skip_action = &""
 
 [node name="Balloon" parent="CanvasLayer/Control/MarginContainer/DevilBalloon" index="0" unique_id=824705658]
 custom_minimum_size = Vector2(300, 0)
@@ -48,6 +52,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
+will_block_other_input = false
 
 [node name="Balloon" parent="CanvasLayer/Control/MarginContainer/AngelBalloon" index="0" unique_id=824705658]
 custom_minimum_size = Vector2(300, 0)
@@ -68,6 +73,9 @@ offset_bottom = 226.0
 grow_horizontal = 1
 grow_vertical = 1
 size_flags_vertical = 0
+dialogue_resource = ExtResource("2_7vsvl")
+auto_start = true
+will_block_other_input = false
 
 [editable path="CanvasLayer/Control/MarginContainer/DevilBalloon"]
 [editable path="CanvasLayer/Control/MarginContainer/AngelBalloon"]
