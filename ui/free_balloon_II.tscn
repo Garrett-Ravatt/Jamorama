@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://crvkl0w8c3p2m"]
 
 [ext_resource type="Script" uid="uid://df7a4q8j1swv2" path="res://ui/free_balloon.gd" id="1_m2hi2"]
+[ext_resource type="Resource" uid="uid://eecwoxqtgo48" path="res://dialogue/dialogue_&_narrative.dialogue" id="2_5inrl"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="2_6kg5h"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_5inrl"]
 
@@ -107,9 +108,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m2hi2")
+dialogue_resource = ExtResource("2_5inrl")
 
 [node name="Balloon" type="Control" parent="." unique_id=359403728]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
