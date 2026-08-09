@@ -21,6 +21,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	peopleImages[people].anchor_right = .5
 	peopleImages[people].anchor_bottom= 1
 	peopleImages[people].scale = Vector2(.3,.3)
+	peopleImages[people].set_script(load("res://scenes/person_hop.gd"))
 	
 	add_child(peopleImages[people])
 	
