@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://7k8yy1xhapov"]
 
 [ext_resource type="PackedScene" uid="uid://i63d6xxa0o14" path="res://ui/free_balloon.tscn" id="1_qvq12"]
-[ext_resource type="Texture2D" uid="uid://4yja6l7qn2b2" path="res://ui/Heaven_Bar_Expand.png" id="2_cee6c"]
+[ext_resource type="Texture2D" uid="uid://bokr4grbahset" path="res://ui/Heaven_Bar_Expanded.png" id="2_gic2n"]
 [ext_resource type="Script" uid="uid://dxo1j6cy0syca" path="res://scenes/slot.gd" id="3_gic2n"]
-[ext_resource type="Texture2D" uid="uid://dfv0cju70exxk" path="res://ui/Hel_Bar_Expand.png" id="4_lneks"]
+[ext_resource type="Texture2D" uid="uid://pvgbkyglabt7" path="res://ui/Circle_Guy.png" id="4_lsh2j"]
 [ext_resource type="Texture2D" uid="uid://cf41uyu4dunt5" path="res://icon.svg" id="5_gic2n"]
+[ext_resource type="Texture2D" uid="uid://chcesxlhq574i" path="res://ui/Hell_Bar_Expanded.png" id="5_lneks"]
 [ext_resource type="Script" uid="uid://befiy3svu1qbg" path="res://scenes/drag_object.gd" id="5_lsh2j"]
+[ext_resource type="Texture2D" uid="uid://b61tqvjy42suh" path="res://ui/Square_Guy.png" id="6_7e5hi"]
 
 [sub_resource type="Theme" id="Theme_hr8qf"]
 default_font_size = 11
@@ -75,16 +77,17 @@ offset_bottom = 295.0
 grow_horizontal = 1
 grow_vertical = 1
 size_flags_vertical = 0
+auto_start = true
 
 [node name="TopBar" type="TextureRect" parent="CanvasLayer/Control" unique_id=1686957876]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 136.0
+offset_bottom = 92.0
 grow_horizontal = 2
-texture = ExtResource("2_cee6c")
+texture = ExtResource("2_gic2n")
 script = ExtResource("3_gic2n")
-newTexture = ExtResource("5_gic2n")
+newTexture = ExtResource("4_lsh2j")
 
 [node name="BottomBar" type="TextureRect" parent="CanvasLayer/Control" unique_id=750285517]
 layout_mode = 1
@@ -95,9 +98,9 @@ anchor_bottom = 1.0
 offset_top = -136.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("4_lneks")
+texture = ExtResource("5_lneks")
 script = ExtResource("3_gic2n")
-newTexture = ExtResource("5_gic2n")
+newTexture = ExtResource("6_7e5hi")
 
 [node name="Test Drag" type="TextureRect" parent="CanvasLayer/Control" unique_id=1027525724]
 layout_mode = 1
