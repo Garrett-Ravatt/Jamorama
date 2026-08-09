@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="Jamorama"
+<<<<<<< HEAD
 run/main_scene="uid://7k8yy1xhapov"
+=======
+run/main_scene="uid://vgsuabfcqee6"
+>>>>>>> main
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -31,7 +35,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/script-v1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/1seamoreplea.dialogue", "res://dialogue/2robinsonplea.dialogue", "res://dialogue/3angelaplea.dialogue", "res://dialogue/dialogue_&_narrative.dialogue")
 
 [physics]
 

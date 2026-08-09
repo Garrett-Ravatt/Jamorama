@@ -1,4 +1,8 @@
 extends Node
 
 
-@export var points := 0
+@export var trueending := 0
+
+@export var angelending := 0
+
+@export var demonending := 0

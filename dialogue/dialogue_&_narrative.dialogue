@@ -1,0 +1,237 @@
+~ start
+=> start
+~ intro
+# Black background, white text, in an old/ancient but legible font.
+# Each line should fade in one by one. Let the player sit with each sentence. Then, fade them all to black.
+
+INTROTEXT: Hear us, lord of scales,
+INTROTEXT: We must empty Purgatory with our prayers
+INTROTEXT: and tired hearts.
+# 
+=> tutorial
+# Load into the main environment of the game -- the desk in front of the wasteland of purgatory.
+# TODO: Text progresses as you click it.
+# TODO:  Fairly fast read speed.
+# TODO: Add in speaking sound effect for both Angel and Devil.
+~ tutorial
+DEMON: First day on the job?
+DEMON: Heh, you're toast.
+
+ANGEL: Now, now, have a little faith in them!
+ANGEL: It's a relatively simple job.
+ANGEL: All you have to do is listen to their pleas for mercy,
+ANGEL: and weigh their virtues against their sins.
+ANGEL: If you view them favorably, raise them up to Heaven. 
+ANGEL: If not..
+
+DEMON: DRAG THEM DOWN TO HELL. HAHAHA.
+
+ANGEL: IF that seems like a big responsibility...
+
+DEMON: It is!
+
+ANGEL: But, like, no pressure.
+ANGEL: :)
+ANGEL: Oh, and by the way, if you ever need council on your decsions... 
+
+DEMON: They can't hear us.
+
+=> seamore
+
+~ seamore
+
+# Seamore could stand to look really pitiful
+# He walks up/fades in.
+
+SEAMORE: ...
+SEAMORE: I'm just a little guy.
+
+# TODO: ANGEL UI - VIRTUE - Best Accountant in San Diego 2014 - 2019.
+# TODO: DEMON UI - SIN - Did somebody's taxes "wrong" in 2020.
+# TODO: Upon pickup, triggers only once: UI SEAMORE PICKUP EXCLAMATION - *quivering* 
+
+- Drag to Heaven
+	$> DialogueDump.demonending +=1
+	=> seamoreheaven
+- Drag to HelL 
+	$> DiaglogueDump.trueending += 1
+	$> DialogueDump.angelending +=1
+	=> seamorehell
+	
+~ seamoreheaven
+
+ANGEL: Interesting decision...
+
+DEMON: Heheheh.
+
+ANGEL: What are you laughing about?
+
+DEMON: The new guy has a sense of humor.
+
+=> robinson
+
+~ seamorehell
+
+DEMON: I can't wait to torture that guy! 
+
+ANGEL: That was a wise decision.
+ANGEL: Keep up the good work. :)
+
+=> robinson
+
+~ robinson
+
+ROBINSON: God-damned, no-good surgeons…
+ROBINSON: Well, there's no point in delaying it now.
+
+# TODO: ANGEL UI - VIRTUE - Always returned the shopping cart. 
+# TODO: DEMON UI - SIN - Disowned his children.
+# TODO: Upon pickup, triggers only once: UI ROBINSON PICKUP EXCLAMATION - Oh, just get it over with!
+
+- Drag to Heaven
+	ANGEL:
+	$> DialogueDump.demonending +=1
+	$> DialogueDump.trueending += 1
+	=> robinsonheaven
+- Drag to HelL 
+	$> DialogueDump.angelending += 1
+	=> robinsonhell
+	
+~ robinsonheaven
+
+ANGEL: Even with...
+ANGEL: Very well. 
+ANGEL: It's difficult, but I can see the good in him.
+
+DEMON: Damn it!
+
+=> angela
+
+~ robinsonhell
+
+ANGEL: Nicely done.
+
+DEMON: Wonderful. 
+
+=> angela
+
+~ angela
+
+ANGELA: E-E-Excuse me?
+ANGELA: Is i-it too much to ask you to put me with m-my brother?
+
+# TODO: ANGEL UI - VIRTUE - Adopted eight stray cats.
+# TODO: DEMON UI - SIN - Pulled the plug on her brother.
+# TODO: Upon pickup, triggers only once: UI ANGELA PICKUP EXCLAMATION - Robby? Robby, where are you?
+
+- Drag to Heaven
+	# MAYBE angel dialogue
+	$> DialogueDump.truending += 1
+	$> DialogueDump.demonending +=1
+	=> angelaheaven
+- Drag to HelL 
+	# MAYBE devil dialogue
+	$> DialogueDump.angelending += 1
+		=> angelahell
+	
+~ angelaheaven
+ANGEL: Really?
+ANGEL: Who was she to decide who lives and who dies? 
+ANGEL: You really need to think harder about these things...
+=> treymour
+	
+~ angelhell
+DEMON: Everybody thinks I prefer to torment bad people.
+DEMON: But that's hardly true.
+DEMON: What I mean to say is...
+DEMON: You're good at this.
+	
+=> treymour
+	
+~ treymour
+TREYMOUR: I'm sorry, I'm so sorry...
+TREYMOUR: ... Oh, God... God, forgive me...
+
+# TODO: ANGEL UI - VIRTUE - Forgave his father for disowning him.
+# TODO: DEMON UI - SIN - Murdered his sister.
+# TODO: Upon pickup, triggers only once: UI TREYMOUR PICKUP EXCLAMATION - Go on. Do it. 
+
+- Drag to Heaven
+	# MAYBE angel popup dialogue
+	$> DialogueDump.demonending +=1
+	=> treymourheaven
+
+- Drag to HelL 
+	# MAYBE devil popup dialogue
+	$> DialogueDump.trueending += 1
+	$> DialogueDump.angelending += 1
+	=> treymourhell
+	
+~ treymourheaven
+ANGEL: A murderer?! In Heaven?!
+
+DEMON: HAHAHA. AMAZING.
+
+ANGEL: I know you're new...
+ANGEL: But I need you to think a little harder about these things. 
+ANGEL: I don't want to have to report you to management, do I?
+	
+=> chloe
+	
+~ treymourhell
+
+DEMON: Mm, what delectable guilt.
+
+=> chloe
+	
+~ chloe
+	
+CHLOE: I was murdered.
+CHLOE: So, yeah, you know what to do.
+	
+# TODO: ANGEL UI - VIRTUE - Was a Red Cross doctor.
+# TODO: DEMON UI - SIN - Framed her brother for $900,000 in tax fraud.
+
+#TODO: ANGEL UI, POPUP TIMED DIALOGUE - Oh, go ahead and send his person to Heaven. 
+#TODO: ANGEL UI, POPUP TIMED DIALOGUE - Management's got you covered on this one.
+
+# TODO: Upon pickup, triggers only once: UI CHLOE PICKUP EXCLAMATION - Finally. This place is so drab.
+
+- Drag to Heaven
+	# MAYBE angel popup dialogue
+	$> DialogueDump.angelending += 1
+	=> chloeheaven
+- Drag to HelL 
+	# MAYBE devil popup dialogue
+	$> DialogueDump.trueending += 1
+	=> chloehell
+	
+~ chloeheaven
+
+ANGEL: I warned you.
+
+~ chloehell
+
+#
+
+# TODO: add conditional for the following 
+# if var angelending == 5 show angelending_letter
+# if var demonending == 5 show demonending_letter
+# if var trueending == 5 show trueending_letter
+# otherwise show purgatoryending_letter
+
+
+# TODO: angelending_letter UI - Offer of Ascension - 
+
+# TODO: demonending_letter UI - Offer of Inequity - 
+
+#TODO: trueending_letter UI - Notice of Termination - This letter confirms our discussion today informing you that your employment with the Office of Purgatory is terminated effective immediately due to poor performance.
+# Complaints were lodged against you from both angelic and infernal departments.
+
+# TODO: purgatoryending_letter UI - Notice of Award - 
+	
+	
+	
+	
+	
+	
