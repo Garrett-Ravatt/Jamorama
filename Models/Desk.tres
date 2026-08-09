@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://df21j3vm6gnwr"]
+
+[ext_resource type="Texture2D" uid="uid://b6fvl8a06buhq" path="res://Models/antique-desk_extracted/textures/Desk_BaseColor.png" id="1_gs62k"]
+[ext_resource type="Texture2D" uid="uid://ddbij68qbed08" path="res://Models/antique-desk_extracted/textures/Desk_Metallic.png" id="2_au2id"]
+[ext_resource type="Texture2D" uid="uid://djwdn06anej8q" path="res://Models/antique-desk_extracted/textures/Desk_Normal.png" id="3_0khsk"]
+[ext_resource type="Texture2D" uid="uid://c4akvefbdti5h" path="res://Models/antique-desk_extracted/textures/Desk_Roughness.png" id="4_puxtf"]
+
+[resource]
+resource_name = "Desk"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_gs62k")
+metallic = 1.0
+metallic_texture = ExtResource("2_au2id")
+roughness_texture = ExtResource("4_puxtf")
+normal_enabled = true
+normal_scale = 0.0
+normal_texture = ExtResource("3_0khsk")
