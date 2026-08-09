@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c75ktaioca62g"]
+
+[ext_resource type="PackedScene" uid="uid://vorrq5ikuvvv" path="res://Models/model.fbx" id="1_4nqb6"]
+[ext_resource type="Material" uid="uid://df21j3vm6gnwr" path="res://Models/Desk.tres" id="2_fjdkg"]
+
+[node name="model" unique_id=1447024193 instance=ExtResource("1_4nqb6")]
+
+[node name="Desk_low" parent="." index="0" unique_id=2089442344]
+surface_material_override/0 = ExtResource("2_fjdkg")
+
+[node name="Draw 2_low" parent="Desk_low" index="0" unique_id=2003347496]
+surface_material_override/0 = ExtResource("2_fjdkg")
+
+[node name="Draw 3_low" parent="Desk_low" index="1" unique_id=482770389]
+surface_material_override/0 = ExtResource("2_fjdkg")
+
+[node name="Draw 1_low" parent="Desk_low" index="2" unique_id=262895091]
+surface_material_override/0 = ExtResource("2_fjdkg")

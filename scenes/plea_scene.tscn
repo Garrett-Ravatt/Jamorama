@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://7k8yy1xhapov"]
+
+[ext_resource type="PackedScene" uid="uid://i63d6xxa0o14" path="res://ui/free_balloon.tscn" id="1_qvq12"]
+[ext_resource type="Texture2D" uid="uid://bokr4grbahset" path="res://ui/Heaven_Bar_Expanded.png" id="2_gic2n"]
+[ext_resource type="Script" uid="uid://dxo1j6cy0syca" path="res://scenes/slot.gd" id="3_gic2n"]
+[ext_resource type="Texture2D" uid="uid://pvgbkyglabt7" path="res://ui/Circle_Guy.png" id="4_lsh2j"]
+[ext_resource type="Texture2D" uid="uid://cf41uyu4dunt5" path="res://icon.svg" id="5_gic2n"]
+[ext_resource type="Texture2D" uid="uid://chcesxlhq574i" path="res://ui/Hell_Bar_Expanded.png" id="5_lneks"]
+[ext_resource type="Script" uid="uid://befiy3svu1qbg" path="res://scenes/drag_object.gd" id="5_lsh2j"]
+[ext_resource type="Texture2D" uid="uid://b61tqvjy42suh" path="res://ui/Square_Guy.png" id="6_7e5hi"]
+
+[sub_resource type="Theme" id="Theme_hr8qf"]
+default_font_size = 11
+
+[node name="Node2D" type="Node2D" unique_id=332241087]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=975921864]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1615383383]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_hr8qf")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=1114378490]
+visible = false
+custom_minimum_size = Vector2(0, 266.455)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -266.455
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 175
+theme_override_constants/margin_right = 175
+
+[node name="DevilBalloon" parent="CanvasLayer/Control/MarginContainer" unique_id=1752220856 instance=ExtResource("1_qvq12")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Balloon" parent="CanvasLayer/Control/MarginContainer/DevilBalloon" index="0" unique_id=824705658]
+custom_minimum_size = Vector2(300, 0)
+
+[node name="ResponsesMenu" parent="CanvasLayer/Control/MarginContainer/DevilBalloon/Balloon" index="1" unique_id=449831663]
+visible = false
+
+[node name="AngelBalloon" parent="CanvasLayer/Control/MarginContainer" unique_id=1455089327 instance=ExtResource("1_qvq12")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Balloon" parent="CanvasLayer/Control/MarginContainer/AngelBalloon" index="0" unique_id=824705658]
+custom_minimum_size = Vector2(300, 0)
+
+[node name="ResponsesMenu" parent="CanvasLayer/Control/MarginContainer/AngelBalloon/Balloon" index="1" unique_id=449831663]
+visible = false
+
+[node name="PleaBalloon" parent="CanvasLayer/Control" unique_id=102877299 instance=ExtResource("1_qvq12")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 172.0
+offset_top = 295.0
+offset_right = 974.0
+offset_bottom = 295.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_vertical = 0
+auto_start = true
+
+[node name="TopBar" type="TextureRect" parent="CanvasLayer/Control" unique_id=1686957876]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 92.0
+grow_horizontal = 2
+texture = ExtResource("2_gic2n")
+script = ExtResource("3_gic2n")
+newTexture = ExtResource("4_lsh2j")
+
+[node name="BottomBar" type="TextureRect" parent="CanvasLayer/Control" unique_id=750285517]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_lneks")
+script = ExtResource("3_gic2n")
+newTexture = ExtResource("6_7e5hi")
+
+[node name="Test Drag" type="TextureRect" parent="CanvasLayer/Control" unique_id=1027525724]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 58)
+texture = ExtResource("5_gic2n")
+script = ExtResource("5_lsh2j")
+
+[editable path="CanvasLayer/Control/MarginContainer/DevilBalloon"]
+[editable path="CanvasLayer/Control/MarginContainer/AngelBalloon"]
