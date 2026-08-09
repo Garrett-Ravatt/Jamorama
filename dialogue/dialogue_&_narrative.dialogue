@@ -11,7 +11,7 @@ INTROTEXT: and tired hearts.
 => tutorial
 # Load into the main environment of the game -- the desk in front of the wasteland of purgatory.
 # TODO: Text progresses as you click it.
-# TODO:  Fairly fast read speed.
+# TODO: Fairly fast read speed.
 # TODO: Add in speaking sound effect for both Angel and Devil.
 ~ tutorial
 DEMON: First day on the job?
@@ -53,7 +53,7 @@ SEAMORE: I'm just a little guy.
 - Drag to Heaven
 	$> DialogueDump.demonending +=1
 	=> seamoreheaven
-- Drag to HelL 
+- Drag to Hell 
 	$> DiaglogueDump.trueending += 1
 	$> DialogueDump.angelending +=1
 	=> seamorehell
@@ -93,7 +93,7 @@ ROBINSON: Well, there's no point in delaying it now.
 	$> DialogueDump.demonending +=1
 	$> DialogueDump.trueending += 1
 	=> robinsonheaven
-- Drag to HelL 
+- Drag to Hell
 	$> DialogueDump.angelending += 1
 	=> robinsonhell
 	
@@ -129,7 +129,7 @@ ANGELA: Is i-it too much to ask you to put me with m-my brother?
 	$> DialogueDump.truending += 1
 	$> DialogueDump.demonending +=1
 	=> angelaheaven
-- Drag to HelL 
+- Drag to Hell
 	# MAYBE devil dialogue
 	$> DialogueDump.angelending += 1
 		=> angelahell
@@ -137,15 +137,14 @@ ANGELA: Is i-it too much to ask you to put me with m-my brother?
 ~ angelaheaven
 ANGEL: Really?
 ANGEL: Who was she to decide who lives and who dies? 
-ANGEL: You really need to think harder about these things...
+ANGEL: You need to think harder about these things...
 => treymour
 	
 ~ angelhell
-DEMON: Everybody thinks I prefer to torment bad people.
+DEMON: Everybody thinks I prefer to torment bad [#italicize 'bad'] people.
 DEMON: But that's hardly true.
 DEMON: What I mean to say is...
 DEMON: You're good at this.
-	
 => treymour
 	
 ~ treymour
@@ -161,7 +160,7 @@ TREYMOUR: ... Oh, God... God, forgive me...
 	$> DialogueDump.demonending +=1
 	=> treymourheaven
 
-- Drag to HelL 
+- Drag to Hell 
 	# MAYBE devil popup dialogue
 	$> DialogueDump.trueending += 1
 	$> DialogueDump.angelending += 1
@@ -172,9 +171,10 @@ ANGEL: A murderer?! In Heaven?!
 
 DEMON: HAHAHA. AMAZING.
 
-ANGEL: I know you're new...
-ANGEL: But I need you to think a little harder about these things. 
-ANGEL: I don't want to have to report you to management, do I?
+ANGEL: It's not just about the people here.  
+ANGEL: Think about the people already in Heaven.
+ANGEL: A little mercy is good, but too much... 
+ANGEL: I don't want to report you to management, but I will. 
 	
 => chloe
 	
@@ -201,18 +201,92 @@ CHLOE: So, yeah, you know what to do.
 	# MAYBE angel popup dialogue
 	$> DialogueDump.angelending += 1
 	=> chloeheaven
-- Drag to HelL 
+- Drag to Hell 
 	# MAYBE devil popup dialogue
 	$> DialogueDump.trueending += 1
 	=> chloehell
 	
 ~ chloeheaven
 
-ANGEL: I warned you.
+if DialogueDump.angelending >= 5
+	ANGEL: There are few people who can put their personal feelings aside.
+	ANGEL: And make the right decision.
+	ANGEL: You made the right decision five times in a row.
+	ANGEL: I'm so proud of you.
+	
+	DEVIL: It's the only [#italicize 'only'] right decision you made all day.
+	
+	=> angelending
+
+else DialogueDump.angelending <= 4
+	ANGEL: I know these decisions may feel unfair... 
+	ANGEL: But are times when mercy is fairer because it's random.
+	=> endingchecks
 
 ~ chloehell
+ANGEL: Do you have no heart?
+ANGEL: Haven't you sent enough people to the pit today?
 
-#
+DEMON: Don't listen to her.
+DEMON: The only thing more delightful than sending bad people to Hell... is sending them to Heaven.  
+=> endingchecks
+
+~ endingchecks
+if DialogueDump.demonending == 5
+	=> demonending
+else 
+	if DialogueDump.trueending == 5
+		=> trueending
+	else 
+		=> purgatoryending 
+
+~ angelending
+# TODO: angelending_letter UI/asset - angelic seal/letterhead on corporate paper
+# Offer of Ascension - 
+
+~ demonending
+ANGEL: I'm happy you could make the right decision. 
+ANGEL: But I'm afraid you made it too late.
+ANGEL: [# betrayed] I've already... I've already lodged a complaint with management. [#melodramatic sniffle] 
+
+DEMON: Don't listen to that good-goody.
+DEMON: The only thing more twisted than sending bad people to Hell... is sending them to Heaven.
+DEMON: So what if you lose your job here?
+DEMON: I'll put in a word for you downstairs.
+ 
+# TODO: demonending_letter UI/asset - angelic seal/letterhead on corporate paper
+# Offer of Inequity 
+
+
+~ purgatoryending
+ANGEL: Well, I guess I can't complain.
+
+DEVIL: Some good decisions, some bad decisions.
+DEVIL: And isn't that a kind balance in itself?
+	
+# TODO: purgatoryending_letter UI/asset - purgatory seal/symbol/lettehead
+# Recognition of Outstanding Service
+# The Office of Purgatory would like to recognize your outstanding performance.
+# Both heavenly and infernal departments noted your ability to maintain the illusion of choice while enforcing the status quo.
+# There is no one better suited to this position than you.
+# Keep up the good work.
+
+~ trueending
+#TODO: trueending_letter UI/asset - purgatory seal/letterhead on corporate paper
+# Notice of Termination
+# This letter confirms that your employment with the Office of Purgatory is terminated effective immediately.
+# After multiple warnings, both angelic and infernal departments complained their Purgatory Officer was "uncoorperative and inadvisable."
+# This is not a condemnation of you personally, but your personal morality aligns with neither Heaven or Hell
+# and for that reason you are hereby relieved of the weight of judgement.
+
+# Sincerely, 
+# The Office of Purgatory
+
+
+
+
+
+
 
 # TODO: add conditional for the following 
 # if var angelending == 5 show angelending_letter
