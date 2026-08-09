@@ -228,7 +228,7 @@ ANGEL: Do you have no heart?
 ANGEL: Haven't you sent enough people to the pit today?
 
 DEMON: Don't listen to her.
-DEMON: The only thing more delightful than sending bad people to Hell... is sending them to Heaven.  
+DEMON: I think you sent that girl exactly where she needs to be.
 => endingchecks
 
 ~ endingchecks
@@ -242,21 +242,33 @@ else
 
 ~ angelending
 # TODO: angelending_letter UI/asset - angelic seal/letterhead on corporate paper
-# Offer of Ascension - 
+# Offer of Ascension
+# Most know that Heaven is not for everyone, few understand it's not for most of anyone.
+# By delivering all Heavenly candidates to Hell -- except for those explitly instructed -- 
+# you've demonstrated a deep understanding of the difficult nature of Heaven. We would therefore like to offer you 
+# the position of Junior Angel - Choir II. 
+# Congratulations, and we look forward to your response.
+# Sincerely,
+# The Department of Heaven
 
 ~ demonending
 ANGEL: I'm happy you could make the right decision. 
 ANGEL: But I'm afraid you made it too late.
 ANGEL: [# betrayed] I've already... I've already lodged a complaint with management. [#melodramatic sniffle] 
 
-DEMON: Don't listen to that good-goody.
-DEMON: The only thing more twisted than sending bad people to Hell... is sending them to Heaven.
+DEMON: Don't listen to goody-goody.
 DEMON: So what if you lose your job here?
-DEMON: I'll put in a word for you downstairs.
+DEMON: I'll put in a word for you downstairs...
  
 # TODO: demonending_letter UI/asset - angelic seal/letterhead on corporate paper
 # Offer of Inequity 
+# It came to our attention that your position as Purgatory Officer was recently terminated, due to a rebellion among the recent entrees into Heaven. 
+# Their loss. Far more delicious than sending bad people to Hell is sending bad people to Heaven. 
+# You understand the nature of discord; and we therefor offer you the position of Baron of Hell. 
+# We look forward to seeing you among our ranks. 
 
+# Deliciously,
+# The Directorate of Hell
 
 ~ purgatoryending
 ANGEL: Well, I guess I can't complain.
@@ -265,11 +277,14 @@ DEMON: Some good decisions, some bad decisions.
 DEMON: And isn't that a kind balance in itself?
 	
 # TODO: purgatoryending_letter UI/asset - purgatory seal/symbol/lettehead
-# Recognition of Outstanding Service
-# The Office of Purgatory would like to recognize your outstanding performance.
+# Recognition of Standing Service
+# The Office of Purgatory would like to recognize your performance.
 # Both heavenly and infernal departments noted your ability to maintain the illusion of choice while enforcing the status quo.
-# There is no one better suited to this position than you.
-# Keep up the good work.
+# You understand balance needs no progress.
+# Keep up the mediocre work.
+
+# Lukewarmly, 
+# The Office of Purgatory
 
 ~ trueending
 #TODO: trueending_letter UI/asset - purgatory seal/letterhead on corporate paper
@@ -277,32 +292,12 @@ DEMON: And isn't that a kind balance in itself?
 # This letter confirms that your employment with the Office of Purgatory is terminated effective immediately.
 # After multiple warnings, both angelic and infernal departments complained their Purgatory Officer was "uncoorperative and inadvisable."
 # This is not a condemnation of you personally, but your personal morality aligns with neither Heaven or Hell
-# and for that reason you are hereby relieved of the weight of judgement.
+# and for that reason you are hereby relieved of the weight of all judgement.
 
-# Sincerely, 
-# The Office of Purgatory
-
-
+# Lukewarmly, 
+#The Office of Purgatory
 
 
-
-
-
-# TODO: add conditional for the following 
-# if var angelending == 5 show angelending_letter
-# if var demonending == 5 show demonending_letter
-# if var trueending == 5 show trueending_letter
-# otherwise show purgatoryending_letter
-
-
-# TODO: angelending_letter UI - Offer of Ascension - 
-
-# TODO: demonending_letter UI - Offer of Inequity - 
-
-#TODO: trueending_letter UI - Notice of Termination - This letter confirms our discussion today informing you that your employment with the Office of Purgatory is terminated effective immediately due to poor performance.
-# Complaints were lodged against you from both angelic and infernal departments.
-
-# TODO: purgatoryending_letter UI - Notice of Award - 
 	
 	
 	
