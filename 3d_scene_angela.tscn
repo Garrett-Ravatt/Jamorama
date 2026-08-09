@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://vgsuabfcqee6"]
+
+[ext_resource type="PackedScene" uid="uid://vorrq5ikuvvv" path="res://Models/model.fbx" id="1_6pkvk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slvn6"]
+
+[sub_resource type="Sky" id="Sky_6pkvk"]
+sky_material = SubResource("ProceduralSkyMaterial_slvn6")
+
+[sub_resource type="Environment" id="Environment_56htp"]
+background_mode = 2
+sky = SubResource("Sky_6pkvk")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qxthg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6y4ci"]
+
+[node name="3DScene_Angela" type="Node3D" unique_id=351432302]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1729677590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0348607, 0.69348514)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=249343718]
+environment = SubResource("Environment_56htp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=559938074]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 4.0937285, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1738929668]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1349533648]
+shape = SubResource("WorldBoundaryShape3D_qxthg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=766832559]
+transform = Transform3D(26.37, 0, 0, 0, 0.916, 0, 0, 0, 50, 0, 0, -39.973335)
+mesh = SubResource("PlaneMesh_6y4ci")
+
+[node name="AntiqueTable" parent="." unique_id=1043766945 instance=ExtResource("1_6pkvk")]
