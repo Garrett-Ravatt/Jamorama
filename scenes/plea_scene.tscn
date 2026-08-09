@@ -46,6 +46,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 
 [node name="Balloon" parent="CanvasLayer/Control/MarginContainer/DevilBalloon" index="0" unique_id=824705658]
+visible = false
 custom_minimum_size = Vector2(300, 0)
 
 [node name="ResponsesMenu" parent="CanvasLayer/Control/MarginContainer/DevilBalloon/Balloon" index="1" unique_id=449831663]
@@ -58,6 +59,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 
 [node name="Balloon" parent="CanvasLayer/Control/MarginContainer/AngelBalloon" index="0" unique_id=824705658]
+visible = false
 custom_minimum_size = Vector2(300, 0)
 
 [node name="ResponsesMenu" parent="CanvasLayer/Control/MarginContainer/AngelBalloon/Balloon" index="1" unique_id=449831663]
@@ -77,7 +79,6 @@ offset_bottom = 295.0
 grow_horizontal = 1
 grow_vertical = 1
 size_flags_vertical = 0
-auto_start = true
 
 [node name="TopBar" type="TextureRect" parent="CanvasLayer/Control" unique_id=1686957876]
 layout_mode = 1
@@ -101,8 +102,10 @@ grow_vertical = 0
 texture = ExtResource("5_lneks")
 script = ExtResource("3_gic2n")
 newTexture = ExtResource("6_7e5hi")
+type = 1
 
 [node name="Test Drag" type="TextureRect" parent="CanvasLayer/Control" unique_id=1027525724]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -115,6 +118,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3, 3)
 pivot_offset = Vector2(64, 58)
 texture = ExtResource("5_gic2n")
 script = ExtResource("5_lsh2j")

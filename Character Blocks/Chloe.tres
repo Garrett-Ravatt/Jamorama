@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SoulData" format=3 uid="uid://ubsrbrc63cyo"]
+
+[ext_resource type="Script" uid="uid://dbr2jk0a1lug5" path="res://Character Blocks/soul_data.gd" id="1_ls3sn"]
+
+[resource]
+script = ExtResource("1_ls3sn")
+metadata/_custom_type_script = "uid://dbr2jk0a1lug5"

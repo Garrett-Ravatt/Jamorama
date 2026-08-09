@@ -11,3 +11,4 @@ extends Resource
 @export var postDialogue: String
 @export var introductionStatement: String
 @export var pickupExclimation: String
+@export var characterTexture: Texture
