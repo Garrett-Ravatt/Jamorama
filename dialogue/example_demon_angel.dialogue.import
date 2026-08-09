@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cnpsfecad5k7h"
+path="res://.godot/imported/example_demon_angel.dialogue-9204ad73a595e273a45b916dc5ea55db.tres"
+
+[deps]
+
+source_file="res://dialogue/example_demon_angel.dialogue"
+dest_files=["res://.godot/imported/example_demon_angel.dialogue-9204ad73a595e273a45b916dc5ea55db.tres"]
+
+[params]
+
+defaults=true
