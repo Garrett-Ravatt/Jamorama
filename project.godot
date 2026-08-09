@@ -14,7 +14,6 @@ config/name="Jamorama"
 run/main_scene="uid://7k8yy1xhapov"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
-<<<<<<<HEADrun/main_scene="uid://7k8yy1xhapov"
 
 [autoload]
 
