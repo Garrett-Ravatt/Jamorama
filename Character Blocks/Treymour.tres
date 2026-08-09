@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoulData" format=3 uid="uid://c7s7sh7okbjk6"]
+
+[ext_resource type="Script" uid="uid://dbr2jk0a1lug5" path="res://Character Blocks/soul_data.gd" id="1_m858g"]
+
+[resource]
+script = ExtResource("1_m858g")
+sins = Array[String](["Murdered his sister in cold blood."])
+virtues = Array[String]([" Forgave his father for disowning him. "])
+id = 3
+name = "Treymour"
+introductionStatement = "I’m sorry, I’m so sorry…"
+pickupExclimation = " Go on. Do it."
+metadata/_custom_type_script = "uid://dbr2jk0a1lug5"
