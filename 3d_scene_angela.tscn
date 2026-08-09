@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://vgsuabfcqee6"]
 
 [ext_resource type="PackedScene" uid="uid://c75ktaioca62g" path="res://Scene Objects/AntiqueTable.tscn" id="1_6pkvk"]
-[ext_resource type="PackedScene" uid="uid://cjrv432caiboh" path="res://Models/desk_lamp.fbx" id="1_slvn6"]
+[ext_resource type="PackedScene" uid="uid://ddq7nd7gxw3yy" path="res://Models/TheLamp.fbx" id="2_slvn6"]
+[ext_resource type="PackedScene" uid="uid://cmsbu7ufjsndn" path="res://Models/DevilBobble.glb" id="3_gsajj"]
+[ext_resource type="PackedScene" uid="uid://dmoiv2wjs2fww" path="res://Models/cherub_extracted/source/cherib.fbx" id="4_56w07"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slvn6"]
 
@@ -11,6 +13,11 @@ sky_material = SubResource("ProceduralSkyMaterial_slvn6")
 [sub_resource type="Environment" id="Environment_56htp"]
 background_mode = 2
 sky = SubResource("Sky_6pkvk")
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.5377206, 0.5052926, 0.5938134, 1)
+volumetric_fog_emission = Color(0.47553658, 0.47553694, 0.4755367, 1)
+volumetric_fog_emission_energy = 0.2
+volumetric_fog_sky_affect = 0.853
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qxthg"]
 
@@ -26,7 +33,9 @@ fov = 16.7
 environment = SubResource("Environment_56htp")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=559938074]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -290.331)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -1643.6201)
+light_color = Color(1, 1, 0.93333334, 1)
+light_angular_distance = 0.64
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1738929668]
 
@@ -34,11 +43,17 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0
 shape = SubResource("WorldBoundaryShape3D_qxthg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=766832559]
-transform = Transform3D(314.479, 0, 0, 0, 1.183, 0, 0, 0, 924.6644, 0, 0, -859.1373)
+transform = Transform3D(314.479, 0, 0, 0, 1.183, 0, 0, 0, 924.6644, 2.486392, -7.277313, -857.443)
 mesh = SubResource("PlaneMesh_6y4ci")
 
-[node name="model" parent="." unique_id=1447024193 instance=ExtResource("1_6pkvk")]
+[node name="Desk" parent="." unique_id=1447024193 instance=ExtResource("1_6pkvk")]
 transform = Transform3D(0.61669344, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="desk_lamp" parent="." unique_id=1918832964 instance=ExtResource("1_slvn6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36724433, 0.8096219, -0.18711632)
+[node name="TheLamp" parent="." unique_id=904679296 instance=ExtResource("2_slvn6")]
+transform = Transform3D(0.894573, 0, -0.44692189, 0, 1, 0, 0.44692189, 0, 0.894573, -0.39965492, 0.81191045, -0.20692337)
+
+[node name="DevilBobble" parent="." unique_id=1498194964 instance=ExtResource("3_gsajj")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.2836635, 0.775, -0.125)
+
+[node name="cherib" parent="." unique_id=1311036975 instance=ExtResource("4_56w07")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.27873337, 1.2080669, -0.15915161)
