@@ -8,33 +8,56 @@ INTROTEXT: Hear us, lord of scales,
 INTROTEXT: We must empty Purgatory with our prayers
 INTROTEXT: and tired hearts.
 # 
-=> tutorial
+=> tutorial_demon_1
 # Load into the main environment of the game -- the desk in front of the wasteland of purgatory.
 # TODO: Text progresses as you click it.
 # TODO: Fairly fast read speed.
 # TODO: Add in speaking sound effect for both Angel and Devil.
-~ tutorial
-DEMON: First day on the job?
+~ tutorial_demon_1
+$> repeat_sound("res://audio/devil_talking.wav")
+DEMON: First day on the job? [next=auto]
 DEMON: Heh, you're toast.
+$> stop_sound("res://audio/devil_talking.wav")
+$> %AngelBubble.play("res://dialogue_&_narrative.dialogue", "tutorial_angel_1")
+=> END
 
+~ tutorial_angel_1
 ANGEL: Now, now, have a little faith in them!
 ANGEL: It's a relatively simple job.
 ANGEL: All you have to do is listen to their pleas for mercy,
 ANGEL: and weigh their virtues against their sins.
 ANGEL: If you view them favorably, raise them up to Heaven. 
 ANGEL: If not...
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue", "tutorial_demon_2")
+=> END
 
+~ tutorial_demon_2
 DEMON: DRAG THEM DOWN TO HELL. HAHAHA.
+$> %AngelBubble.play("res://dialogue_&_narrative.dialogue", "tutorial_angel_2")
+=> END
 
+~ tutorial_angel_2
 ANGEL: IF that seems like a big responsibility...
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue", "tutorial_demon_3")
+=> END
 
+~ tutorial_demon_3
 DEMON: It is!
+$> %AngelBubble.play("res://dialogue_&_narrative.dialogue", "tutorial_angel_3")
+=> END
 
+~ tutorial_angel_3
 ANGEL: But, like, no pressure.
 ANGEL: :)
-ANGEL: Oh, and by the way, if you ever need council on your decsions... 
+ANGEL: Oh, and by the way, if you ever need council on your decisions...
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue", "tutorial_angel_4")
+=> END
 
+~ tutorial_demon_4
 DEMON: They can't hear us.
+$> %PleaBubble.hide()
+$> %PleaBubble.play("res://dialogue_&_narrative.dialogue", "seamore")
+=> END
 
 => seamore
 
@@ -45,6 +68,9 @@ DEMON: They can't hear us.
 
 SEAMORE: ...
 SEAMORE: I'm just a little guy.
+$> %PleaBubble.hide()
+=> END
+
 
 # TODO: ANGEL UI - VIRTUE - Best Accountant in San Diego 2014 - 2019.
 # TODO: DEMON UI - SIN - Did somebody's taxes "wrong" in 2020.
@@ -52,66 +78,101 @@ SEAMORE: I'm just a little guy.
 
 - Drag to Heaven
 	$> DialogueDump.demonending +=1
-	=> seamoreheaven
+	$> %AngelBubble.play("res://dialogue_&_narrative.dialogue", "seamoreheaven_angel_1")
+	=> seamoreheaven_angel_1
 - Drag to Hell 
 	$> DiaglogueDump.trueending += 1
-	$> DialogueDump.angelending +=1
-	=> seamorehell
+	$> DialogueDump.angelending += 1
+	$> %DemonBubble.play("res://dialogue_&_narrative.dialogue", "seamorehell_demon_1")
+	=> seamorehell_demon_1
 	
-~ seamoreheaven
+~ seamoreheaven_angel_1
 
-ANGEL: Interesting decision...
+ANGEL: Interesting choice...
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue", "seamoreheaven_demon_1")
+=> END
 
+~ seamoreheaven_demon_1
 DEMON: Heheheh.
+$> %AngelBubble.play("res://dialogue_&_narrative.dialogue", "seamoreheaven_angel_2")
+=> END
+
+~ seamoreheaven_angel_2
 
 ANGEL: What are you laughing about?
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue", "seamoreheaven_demon_2")
+=> END
 
+~ seamoreheaven_demon_2
 DEMON: The new guy has a sense of humor.
+$> %PleaBubble.play("res://dialogue_&_narrative.dialogue", "robinson")
+$> %DemonBubble.hide()
+=> END
 
 => robinson
 
-~ seamorehell
+~ seamorehell_demon_1
+DEMON: I can't wait to torture that guy!
+$> %AngelBubble.play("res://dialogue_&_narrative.dialogue", "seamorehell_angel_1")
+=> END
 
-DEMON: I can't wait to torture that guy! 
+~ seamorehell_angel_1
 
 ANGEL: That was a wise decision.
 ANGEL: Keep up the good work. :)
+$> %AngelBubble.hide()
+$> %PleaBubble.play("res://dialogue_&_narrative.dialogue", "robinson")
+=> END
 
 => robinson
 
 ~ robinson
-
 ROBINSON: God-damned, no-good surgeons…
 ROBINSON: Well, there's no point in delaying it now.
+$> %PleaBubble.hide()
+=> END
 
 # TODO: ANGEL UI - VIRTUE - Always returned the shopping cart. 
 # TODO: DEMON UI - SIN - Disowned his children.
 # TODO: Upon pickup, triggers only once: UI ROBINSON PICKUP EXCLAMATION - Oh, just get it over with!
 
 - Drag to Heaven
-	ANGEL:
 	$> DialogueDump.demonending +=1
 	$> DialogueDump.trueending += 1
-	=> robinsonheaven
+	$> %AngelBubble.play("res://dialogue_&_narrative.dialogue", "robinsonheaven_angel_1")
+	=> robinsonheaven_angel_1
 - Drag to Hell
 	$> DialogueDump.angelending += 1
-	=> robinsonhell
+	$> %AngelBubble.play("res://dialogue_&_narrative.dialogue", "robinsonhell_angel_1")
+	=> robinsonhell_angel_1
 	
-~ robinsonheaven
+~ robinsonheaven_angel_1
 
 ANGEL: Even with...
 ANGEL: Very well. 
 ANGEL: It's difficult, but I can see the good in him.
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","robinsonheaven_demon_1")
+=> END
 
-DEMON: Damn it!
+~ robinsonheaven_demon_1
+DEMON: Aww, I had a lovely cauldron of oil for him.
+$> %DemonBubble.hide()
+$> % PleaBubble.play("res://dialogue_&_narrative.dialogue","angela")
+=> END
 
 => angela
 
-~ robinsonhell
-
+~ robinsonhell_angel_1
 ANGEL: Nicely done.
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","robinsonhell_demon_1")
+$> AngelBubble.hide()
+=> END
 
+~ robinsonhell_demon_1
 DEMON: Wonderful. 
+$> %PleaBubble.play("res://dialogue_&_narrative.dialogue","angela")
+$> %DemonBubble.hide()
+=> END
 
 => angela
 
@@ -119,6 +180,7 @@ DEMON: Wonderful.
 
 ANGELA: E-E-Excuse me?
 ANGELA: Is i-it too much to ask you to put me with m-my brother?
+$> %PleaBubble.hide()
 
 # TODO: ANGEL UI - VIRTUE - Adopted eight stray cats.
 # TODO: DEMON UI - SIN - Pulled the plug on her brother.
@@ -128,28 +190,37 @@ ANGELA: Is i-it too much to ask you to put me with m-my brother?
 	# MAYBE angel dialogue
 	$> DialogueDump.truending += 1
 	$> DialogueDump.demonending +=1
-	=> angelaheaven
+	$> %AngelBubble.play("res://dialogue_&_narrative.dialogue","angelaheaven_angel_1")
+	=> angelaheaven_angel_1
 - Drag to Hell
 	# MAYBE devil dialogue
 	$> DialogueDump.angelending += 1
-		=> angelahell
+	$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","angelaheaven_demon_1")
+		=> angelahell_demon_1
 	
-~ angelaheaven
+~ angelaheaven_angel_1
 ANGEL: Really?
 ANGEL: Who was she to decide who lives and who dies? 
 ANGEL: You need to think harder about these things...
+$> %PleaBubble.play("res://dialogue_&_narrative.dialogue","treymour")
+$> %AngelBubble.hide()
+=> END
 => treymour
 	
-~ angelhell
+~ angelhell_demon_1
 DEMON: Everybody thinks I prefer to torment bad [#italicize 'bad'] people.
 DEMON: But that's hardly true.
 DEMON: What I mean to say is...
 DEMON: You're good at this.
+$> %PleaBubble.play("res://dialogue_&_narrative.dialogue","treymour")
+$> %DemonBubble.hide()
+=> END
 => treymour
 	
 ~ treymour
 TREYMOUR: I'm sorry, I'm so sorry...
 TREYMOUR: ... Oh, God... God, forgive me...
+TREYMOUR: ...
 
 # TODO: ANGEL UI - VIRTUE - Forgave his father for disowning him.
 # TODO: DEMON UI - SIN - Murdered his sister.
@@ -158,29 +229,46 @@ TREYMOUR: ... Oh, God... God, forgive me...
 - Drag to Heaven
 	# MAYBE angel popup dialogue
 	$> DialogueDump.demonending +=1
-	=> treymourheaven
+	$> %AngelBubble.play("res://dialogue_&_narrative.dialogue","treymourheaven_angel_1")
+	=> treymourheaven_angel_1
 
 - Drag to Hell 
 	# MAYBE devil popup dialogue
 	$> DialogueDump.trueending += 1
 	$> DialogueDump.angelending += 1
-	=> treymourhell
+	$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","treymourhell_demon_1")
+	=> treymourhell_demon_1
 	
-~ treymourheaven
+~ treymourheaven_angel_1
 ANGEL: A murderer?! In Heaven?!
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","treymourhell_demon_1")
+=> END
 
+~ treymourheaven_demon_1
 DEMON: HAHAHA. AMAZING.
+$> %AngelBubble.play("res://dialogue_&_narrative.dialogue","treymourhell_angel_2")
+=> END
 
+~ treymourheaven_angel_2
 ANGEL: It's not just about the people here.  
 ANGEL: Think about the people already in Heaven.
 ANGEL: A little mercy is good, but too much... 
-ANGEL: I don't want to report you to management, but I will. 
+ANGEL: I don't want to report you to management, but I will.
+$> %PleaBubble.play("res://dialogue_&_narrative.dialogue","chloe")
+=> END
 	
 => chloe
 	
-~ treymourhell
-
+~ treymourhell_demon_1
 DEMON: Mm, what delectable guilt.
+$> %AngelBubble.play("res://dialogue_&_narrative.dialogue","treymourhell_angel_1")
+=> END
+
+~ treymourhell_angel_1
+ANGEL: ...
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","chloe")
+$> %AngelBubble.hide()
+=> END
 
 => chloe
 	
@@ -188,7 +276,8 @@ DEMON: Mm, what delectable guilt.
 	
 CHLOE: I was murdered.
 CHLOE: So, yeah, you know what to do.
-	
+$> %PleaBubble.hide()
+
 # TODO: ANGEL UI - VIRTUE - Was a Red Cross doctor.
 # TODO: DEMON UI - SIN - Framed her brother for $900,000 in tax fraud.
 
@@ -200,47 +289,64 @@ CHLOE: So, yeah, you know what to do.
 - Drag to Heaven
 	# MAYBE angel popup dialogue
 	$> DialogueDump.angelending += 1
-	=> chloeheaven
+	$> %AngelBubble.play("res://dialogue_&_narrative.dialogue","chloeheaven_angel_0")
+	=> chloeheaven_angel_0
 - Drag to Hell 
 	# MAYBE devil popup dialogue
 	$> DialogueDump.trueending += 1
-	=> chloehell
+	$> %AngelBubble.play("res://dialogue_&_narrative.dialogue","chloehell_angel_1")
+	=> chloehell_angel_1
 	
-~ chloeheaven
+~ chloeheaven_angel_0
 
 if DialogueDump.angelending >= 5
+	~ chloeheaven_angel_1
 	ANGEL: There are few people who can put their personal feelings aside.
 	ANGEL: And make the right decision.
 	ANGEL: You made the right decision five times in a row.
 	ANGEL: I'm so proud of you.
+	$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","chloeheaven_demon_1")
+	=> END
 	
-	DEVIL: It's the only [#italicize 'only'] right decision you made all day.
-	
+	~ chloeheaven_demon_1
+	DEMON: In fact... even I can admit...
+	DEMON: It's the only [#italicize 'only'] right decision you made all day.
+	=> END
 	=> angelending
 
 else DialogueDump.angelending <= 4
 	ANGEL: I know these decisions may feel unfair... 
 	ANGEL: But are times when mercy is fairer because it's random.
+	
 	=> endingchecks
 
-~ chloehell
+~ chloehell_angel_1
 ANGEL: Do you have no heart?
 ANGEL: Haven't you sent enough people to the pit today?
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","chloehell_demon_1")
+=> END
 
+~ chloehell_demon_1
 DEMON: Don't listen to her.
 DEMON: I think you sent that girl exactly where she needs to be.
 => endingchecks
 
 ~ endingchecks
 if DialogueDump.demonending == 5
-	=> demonending
+	$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","demonending_angel_1")
+	=> END
+	=> demonending_angel_1
 else 
 	if DialogueDump.trueending == 5
+		$> %DemonBubble.hide()
+		$> %AngelBubble.hide()
 		=> trueending
 	else 
-		=> purgatoryending 
+		$> %AngelBubble.play("res://dialogue_&_narrative.dialogue","purgatoryending_angel_1")
+		=> purgatoryending_angel_1
 
 ~ angelending
+=> END
 # TODO: angelending_letter UI/asset - angelic seal/letterhead on corporate paper
 # Offer of Ascension
 # Most know that Heaven is not for everyone, few understand it's not for most of anyone.
@@ -251,14 +357,19 @@ else
 # Sincerely,
 # The Department of Heaven
 
-~ demonending
+~ demonending_angel_1
 ANGEL: I'm happy you could make the right decision. 
 ANGEL: But I'm afraid you made it too late.
 ANGEL: [# betrayed] I've already... I've already lodged a complaint with management. [#melodramatic sniffle] 
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","demonending_demon_1")
+=> END
 
+~ demonending_demon_1
 DEMON: Don't listen to goody-goody.
 DEMON: So what if you lose your job here?
 DEMON: I'll put in a word for you downstairs...
+$> %DemonBubble.hide()
+=> END
  
 # TODO: demonending_letter UI/asset - angelic seal/letterhead on corporate paper
 # Offer of Inequity 
@@ -270,11 +381,15 @@ DEMON: I'll put in a word for you downstairs...
 # Deliciously,
 # The Directorate of Hell
 
-~ purgatoryending
+~ purgatoryending_angel_1
 ANGEL: Well, I guess I can't complain.
+$> %DemonBubble.play("res://dialogue_&_narrative.dialogue","purgatoryending_demon_1")
 
+~ purgatoryending_demon_1
 DEMON: Some good decisions, some bad decisions.
 DEMON: And isn't that a kind balance in itself?
+$> %DemonBubble.hide()
+=> END
 	
 # TODO: purgatoryending_letter UI/asset - purgatory seal/symbol/lettehead
 # Recognition of Standing Service
