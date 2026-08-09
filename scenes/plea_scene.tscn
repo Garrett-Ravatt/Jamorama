@@ -77,7 +77,6 @@ offset_bottom = 295.0
 grow_horizontal = 1
 grow_vertical = 1
 size_flags_vertical = 0
-auto_start = true
 
 [node name="TopBar" type="TextureRect" parent="CanvasLayer/Control" unique_id=1686957876]
 layout_mode = 1
