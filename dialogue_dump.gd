@@ -35,7 +35,14 @@ func put_down():
 
 func play_aud(s,b = false):
 	var p := AudioStreamPlayer.new()
+	
+	if not audio_streams.has(s):
+		printerr("I don't have %s" % s)
+		return
 		
+	if players.has(s):
+		return
+	
 	add_child(p)
 	p.stream = audio_streams[s]
 	p.play()
