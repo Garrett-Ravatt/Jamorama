@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_m858g")
-sins = Array[String](["Murdered his sister in cold blood."])
-virtues = Array[String]([" Forgave his father for disowning him. "])
+sins = Array[String](["Murdered his sister."])
+virtues = Array[String](["Forgave his father for disowning him."])
 id = 3
 name = "Treymour"
 introductionStatement = "I’m sorry, I’m so sorry…"

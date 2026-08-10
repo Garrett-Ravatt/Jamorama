@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_yh5wp")
-sins = Array[String](["Foreclosed over ten thousand homes as real estate adjustor."])
-virtues = Array[String](["Fed pigeons fresh bread. "])
+sins = Array[String](["Did somebody's taxes wrong in 2020."])
+virtues = Array[String](["Best Accountant in San Diego 2014 - 2019."])
 name = "Seamore"
 introductionStatement = "I’m just a little guy."
 pickupExclimation = "*quivering*"
