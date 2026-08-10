@@ -37,6 +37,8 @@
 [ext_resource type="Resource" uid="uid://c7s7sh7okbjk6" path="res://Character Blocks/Treymour.tres" id="20_sn4rx"]
 [ext_resource type="AudioStream" uid="uid://p1fgaf04ok1w" path="res://audio/8_chloe_pickup_lines.wav" id="20_w0oyh"]
 [ext_resource type="Resource" uid="uid://ubsrbrc63cyo" path="res://Character Blocks/Chloe.tres" id="21_063lf"]
+[ext_resource type="Texture2D" uid="uid://bljglykpeqdnc" path="res://character_sprites/Seamore.png" id="38_ccwvk"]
+[ext_resource type="Script" uid="uid://rq3dtgotlqkd" path="res://CharacterSprite.gd" id="39_wkogs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slvn6"]
 
@@ -151,17 +153,11 @@ custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Balloon" parent="Node2D/CanvasLayer2/Control/MarginContainer/AngelBalloon" index="0" unique_id=359403728]
-visible = true
-
 [node name="DevilBalloon" parent="Node2D/CanvasLayer2/Control/MarginContainer" unique_id=1799695007 instance=ExtResource("5_4eflg")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 size_flags_horizontal = 8
-
-[node name="Balloon" parent="Node2D/CanvasLayer2/Control/MarginContainer/DevilBalloon" index="0" unique_id=359403728]
-visible = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="Node2D/CanvasLayer2/Control" unique_id=894288495]
 layout_mode = 1
@@ -180,9 +176,6 @@ custom_minimum_size = Vector2(830, 400)
 layout_mode = 2
 start_from_title = "intro"
 auto_start = true
-
-[node name="Balloon" parent="Node2D/CanvasLayer2/Control/MarginContainer2/PleaBalloon" index="0" unique_id=359403728]
-visible = true
 
 [node name="TopBar" type="TextureRect" parent="Node2D/CanvasLayer2/Control" unique_id=2023750408]
 layout_mode = 1
@@ -300,6 +293,11 @@ SinList = NodePath("../SinScroll/RichTextLabel")
 VirtueList = NodePath("../VirtueScroll/RichTextLabel")
 VirtueScroll = NodePath("../VirtueScroll")
 SinScroll = NodePath("../SinScroll")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=53215656]
+transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 1.4561377, 1, -0.961)
+texture = ExtResource("38_ccwvk")
+script = ExtResource("39_wkogs")
 
 [editable path="Node2D/CanvasLayer2/Control/MarginContainer/AngelBalloon"]
 [editable path="Node2D/CanvasLayer2/Control/MarginContainer/DevilBalloon"]
