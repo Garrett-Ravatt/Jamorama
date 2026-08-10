@@ -17,8 +17,12 @@ var db : FreeBalloon
 
 var cm: CharacterManager
 
-func play_aud(s):
+func end():
+	pass
+
+func play_aud(s,b = false):
 	var p := AudioStreamPlayer.new()
+		
 	add_child(p)
 	p.stream = audio_streams[s]
 	p.play()
@@ -30,3 +34,4 @@ func stop_aud(s):
 		players[s].stop()
 		players[s].queue_free()
 		players.erase(s)
+		
