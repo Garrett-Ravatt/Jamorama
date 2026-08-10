@@ -1,9 +1,12 @@
+class_name CharacterManager
 extends Node
 
 @export var CurrentCharacter: SoulData
 @export var Characters: Array[SoulData] = []
 @export var SinList: RichTextLabel
 @export var VirtueList: RichTextLabel
+@export var VirtueScroll: TextureRect
+@export var SinScroll: TextureRect
 
 var CurIndex = 0
 

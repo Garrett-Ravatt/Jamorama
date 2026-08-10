@@ -15,6 +15,8 @@ var ab : FreeBalloon
 var pb : FreeBalloon
 var db : FreeBalloon
 
+var cm: CharacterManager
+
 func play_aud(s):
 	var p := AudioStreamPlayer.new()
 	add_child(p)

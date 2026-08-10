@@ -4,6 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://ddq7nd7gxw3yy" path="res://Models/TheLamp.fbx" id="2_slvn6"]
 [ext_resource type="PackedScene" uid="uid://cmsbu7ufjsndn" path="res://Models/DevilBobble.glb" id="3_gsajj"]
 [ext_resource type="PackedScene" uid="uid://dmoiv2wjs2fww" path="res://Models/cherub_extracted/source/cherib.fbx" id="4_56w07"]
+[ext_resource type="PackedScene" uid="uid://crvkl0w8c3p2m" path="res://ui/free_balloon_II.tscn" id="5_4eflg"]
+[ext_resource type="Texture2D" uid="uid://bokr4grbahset" path="res://ui/Heaven_Bar_Expanded.png" id="6_cxy38"]
+[ext_resource type="Script" uid="uid://dxo1j6cy0syca" path="res://scenes/slot.gd" id="7_0lgiu"]
+[ext_resource type="Texture2D" uid="uid://pvgbkyglabt7" path="res://ui/Circle_Guy.png" id="8_8un63"]
+[ext_resource type="Texture2D" uid="uid://chcesxlhq574i" path="res://ui/Hell_Bar_Expanded.png" id="9_t5w8m"]
+[ext_resource type="Texture2D" uid="uid://b61tqvjy42suh" path="res://ui/Square_Guy.png" id="10_0do2q"]
+[ext_resource type="Texture2D" uid="uid://cf41uyu4dunt5" path="res://icon.svg" id="11_bl7wp"]
+[ext_resource type="Script" uid="uid://befiy3svu1qbg" path="res://scenes/drag_object.gd" id="12_es067"]
+[ext_resource type="Texture2D" uid="uid://dc63mjn7neuhi" path="res://ui/Virtue_Scroll.png" id="13_5safj"]
+[ext_resource type="Texture2D" uid="uid://cy50rhvwcahbc" path="res://ui/Sin_Scroll.png" id="14_u7cu8"]
+[ext_resource type="Script" uid="uid://bwowwr12s4ge1" path="res://Character Blocks/CharacterManager.gd" id="15_wqoxf"]
+[ext_resource type="Script" uid="uid://dbr2jk0a1lug5" path="res://Character Blocks/soul_data.gd" id="16_2ko0d"]
+[ext_resource type="Resource" uid="uid://djwfukl2vowlu" path="res://Character Blocks/Seamore.tres" id="17_cwyna"]
+[ext_resource type="Resource" uid="uid://cayjidgkgviub" path="res://Character Blocks/Robinson.tres" id="18_mi7rm"]
+[ext_resource type="Resource" uid="uid://bbvm8xvesqo4x" path="res://Character Blocks/Angela.tres" id="19_yerqd"]
+[ext_resource type="Resource" uid="uid://c7s7sh7okbjk6" path="res://Character Blocks/Treymour.tres" id="20_sn4rx"]
+[ext_resource type="Resource" uid="uid://ubsrbrc63cyo" path="res://Character Blocks/Chloe.tres" id="21_063lf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slvn6"]
 
@@ -16,6 +33,7 @@ sky = SubResource("Sky_6pkvk")
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.21502772, 0.3038144, 0.42154092, 1)
 volumetric_fog_emission = Color(0.3438879, 0.3750475, 0.4650089, 1)
+volumetric_fog_emission_energy = 0.2
 volumetric_fog_sky_affect = 0.853
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qxthg"]
@@ -24,6 +42,9 @@ volumetric_fog_sky_affect = 0.853
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56w07"]
 albedo_color = Color(0.8865831, 0.8755477, 0.9723796, 1)
+
+[sub_resource type="Theme" id="Theme_u8r0y"]
+default_font_size = 11
 
 [node name="3DScene_Angela" type="Node3D" unique_id=351432302]
 
@@ -72,3 +93,180 @@ transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.2836635, 0.775, -0
 
 [node name="cherib" parent="." unique_id=1311036975 instance=ExtResource("4_56w07")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.27873337, 1.2080669, -0.068552)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2066591317]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1688135762]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u8r0y")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=13098277]
+custom_minimum_size = Vector2(0, 440)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -266.455
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 173
+
+[node name="AngelBalloon" parent="CanvasLayer/Control/MarginContainer" unique_id=1195421247 instance=ExtResource("5_4eflg")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="ResponsesMenu" parent="CanvasLayer/Control/MarginContainer/AngelBalloon/Balloon" parent_id_path=PackedInt32Array(1195421247, 359403728) index="0" unique_id=966297223]
+visible = false
+
+[node name="DevilBalloon" parent="CanvasLayer/Control/MarginContainer" unique_id=1799695007 instance=ExtResource("5_4eflg")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="ResponsesMenu" parent="CanvasLayer/Control/MarginContainer/DevilBalloon/Balloon" parent_id_path=PackedInt32Array(1799695007, 359403728) index="0" unique_id=966297223]
+visible = false
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control" unique_id=894288495]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 80
+
+[node name="PleaBalloon" parent="CanvasLayer/Control/MarginContainer2" unique_id=267929194 instance=ExtResource("5_4eflg")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(830, 400)
+layout_mode = 2
+start_from_title = "intro"
+auto_start = true
+
+[node name="TopBar" type="TextureRect" parent="CanvasLayer/Control" unique_id=2023750408]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 92.0
+grow_horizontal = 2
+texture = ExtResource("6_cxy38")
+script = ExtResource("7_0lgiu")
+newTexture = ExtResource("8_8un63")
+
+[node name="BottomBar" type="TextureRect" parent="CanvasLayer/Control" unique_id=2005892533]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_t5w8m")
+script = ExtResource("7_0lgiu")
+newTexture = ExtResource("10_0do2q")
+type = 1
+
+[node name="Test Drag" type="TextureRect" parent="CanvasLayer/Control" unique_id=2110783127]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(64, 58)
+texture = ExtResource("11_bl7wp")
+script = ExtResource("12_es067")
+
+[node name="VirtueScroll" type="TextureRect" parent="CanvasLayer/Control" unique_id=2134525656]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 148.0
+offset_top = -336.0
+offset_right = 840.0
+offset_bottom = 365.0
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("13_5safj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/VirtueScroll" unique_id=1114983415]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 216.66666
+offset_top = 128.33331
+offset_right = -217.00003
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.18431373, 0.05490196, 0.05490196, 1)
+theme_override_font_sizes/normal_font_size = 35
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="SinScroll" type="TextureRect" parent="CanvasLayer/Control" unique_id=1626650240]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -552.0
+offset_top = -332.0
+offset_right = 245.0
+offset_bottom = 369.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("14_u7cu8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/SinScroll" unique_id=782653997]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_top = 118.33334
+offset_right = -267.0
+offset_bottom = -134.33337
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.18431373, 0.05490196, 0.05490196, 1)
+theme_override_font_sizes/normal_font_size = 35
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="CharacterManager" type="Control" parent="CanvasLayer/Control" unique_id=296440327 node_paths=PackedStringArray("SinList", "VirtueList", "VirtueScroll", "SinScroll")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("15_wqoxf")
+Characters = Array[ExtResource("16_2ko0d")]([ExtResource("17_cwyna"), ExtResource("18_mi7rm"), ExtResource("19_yerqd"), ExtResource("20_sn4rx"), ExtResource("21_063lf")])
+SinList = NodePath("../SinScroll/RichTextLabel")
+VirtueList = NodePath("../VirtueScroll/RichTextLabel")
+VirtueScroll = NodePath("../VirtueScroll")
+SinScroll = NodePath("../SinScroll")
+
+[editable path="CanvasLayer/Control/MarginContainer/AngelBalloon"]
+[editable path="CanvasLayer/Control/MarginContainer/DevilBalloon"]
+[editable path="CanvasLayer/Control/MarginContainer2/PleaBalloon"]
