@@ -25,7 +25,7 @@ func next_character() -> void:
 		VirtueList.text = ""
 		for x in Characters[CurIndex].virtues:
 			VirtueList.text += x + "\n"
-		On()
+		Character.start(Characters[CurIndex].characterTexture)
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 func On():
 	SinScroll.visible = true
 	VirtueScroll.visible = true
-	Character.start(Characters[CurIndex].characterTexture)
+	
 	DragSquare.visible = true
 
 func Off():

@@ -22,6 +22,9 @@ func end():
 
 func new_character():
 	cm.next_character()
+
+func turn_on():
+	cm.On()
 	
 func reset_character():
 	cm.Off()
