@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ds0fg0cjlwprl"]
+
+[ext_resource type="Script" uid="uid://dvp2133enoet6" path="res://scenes/button.gd" id="1_ouf4f"]
+
+[node name="StartMenu" type="Control" unique_id=1600947704]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=173413326]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=1739364685]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Begin"
+script = ExtResource("1_ouf4f")
+
+[connection signal="pressed" from="MarginContainer/Button" to="MarginContainer/Button" method="_on_pressed"]
