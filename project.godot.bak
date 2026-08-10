@@ -34,7 +34,15 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue_&_narrative.dialogue", "res://dialogue/script-v1.dialogue", "res://dialogue/example_demon_angel.dialogue")
+=======
+locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue_&_narrative.dialogue", "res://dialogue/example_demon_angel.dialogue")
+>>>>>>> main
+=======
 locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue_&_narrative.dialogue", "res://dialogue/example_demon_angel.dialogue", "res://dialogue/script-v1.dialogue")
+>>>>>>> main
 
 [physics]
 

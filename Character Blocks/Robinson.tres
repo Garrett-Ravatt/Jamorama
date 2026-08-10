@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ndxos")
-sins = Array[String](["Disowned and disinherited his only son."])
+sins = Array[String](["Disowned his children."])
 virtues = Array[String](["Always returned the shopping cart."])
 id = 1
 name = "Robinson"

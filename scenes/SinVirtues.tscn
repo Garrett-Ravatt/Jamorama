@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://shpvgctxc3ay"]
+
+[ext_resource type="PackedScene" uid="uid://7k8yy1xhapov" path="res://scenes/plea_scene.tscn" id="1_6bicn"]
+[ext_resource type="Texture2D" uid="uid://dc63mjn7neuhi" path="res://ui/Virtue_Scroll.png" id="2_5datr"]
+[ext_resource type="Texture2D" uid="uid://cy50rhvwcahbc" path="res://ui/Sin_Scroll.png" id="3_4grcb"]
+[ext_resource type="Script" uid="uid://bwowwr12s4ge1" path="res://Character Blocks/CharacterManager.gd" id="4_serys"]
+[ext_resource type="Script" uid="uid://dbr2jk0a1lug5" path="res://Character Blocks/soul_data.gd" id="5_5srr1"]
+[ext_resource type="Resource" uid="uid://djwfukl2vowlu" path="res://Character Blocks/Seamore.tres" id="6_uhcxq"]
+[ext_resource type="Resource" uid="uid://cayjidgkgviub" path="res://Character Blocks/Robinson.tres" id="7_4b1kc"]
+[ext_resource type="Resource" uid="uid://bbvm8xvesqo4x" path="res://Character Blocks/Angela.tres" id="8_1v8u7"]
+[ext_resource type="Resource" uid="uid://c7s7sh7okbjk6" path="res://Character Blocks/Treymour.tres" id="9_0mkbs"]
+[ext_resource type="Resource" uid="uid://ubsrbrc63cyo" path="res://Character Blocks/Chloe.tres" id="10_mwvpr"]
+
+[node name="SinVirtues" type="Node2D" unique_id=548849368]
+
+[node name="Node2D" parent="." unique_id=332241087 instance=ExtResource("1_6bicn")]
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=1816171108]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node2D2" unique_id=1892043370]
+
+[node name="VirtueScroll" type="TextureRect" parent="Node2D2/CanvasLayer" unique_id=915021113]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 148.0
+offset_top = -336.0
+offset_right = 840.0
+offset_bottom = 365.0
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_5datr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D2/CanvasLayer/VirtueScroll" unique_id=1240454938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 216.66666
+offset_top = 128.33331
+offset_right = -217.00003
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.18431373, 0.05490196, 0.05490196, 1)
+theme_override_font_sizes/normal_font_size = 35
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="SinScroll" type="TextureRect" parent="Node2D2/CanvasLayer" unique_id=992156470]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -552.0
+offset_top = -332.0
+offset_right = 245.0
+offset_bottom = 369.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_4grcb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D2/CanvasLayer/SinScroll" unique_id=668134216]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_top = 118.33334
+offset_right = -267.0
+offset_bottom = -134.33337
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.18431373, 0.05490196, 0.05490196, 1)
+theme_override_font_sizes/normal_font_size = 35
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Character Manager" type="Control" parent="." unique_id=125490383 node_paths=PackedStringArray("SinList", "VirtueList")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_serys")
+Characters = Array[ExtResource("5_5srr1")]([ExtResource("6_uhcxq"), ExtResource("7_4b1kc"), ExtResource("8_1v8u7"), ExtResource("9_0mkbs"), ExtResource("10_mwvpr")])
+SinList = NodePath("../Node2D2/CanvasLayer/SinScroll/RichTextLabel")
+VirtueList = NodePath("../Node2D2/CanvasLayer/VirtueScroll/RichTextLabel")
+
+[editable path="Node2D"]
+[editable path="Node2D/CanvasLayer/Control/MarginContainer/DevilBalloon"]
+[editable path="Node2D/CanvasLayer/Control/MarginContainer/AngelBalloon"]

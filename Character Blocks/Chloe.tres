@@ -4,4 +4,8 @@
 
 [resource]
 script = ExtResource("1_ls3sn")
+sins = Array[String](["Framed her brother for $900,000 in tax fraud."])
+virtues = Array[String](["Was a Red Cross doctor."])
+id = 4
+name = "Chloe"
 metadata/_custom_type_script = "uid://dbr2jk0a1lug5"
