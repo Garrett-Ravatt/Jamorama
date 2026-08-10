@@ -30,7 +30,11 @@ default_font_size = 11
 
 [node name="Node2D" type="Node2D" unique_id=332241087]
 script = ExtResource("1_6cslh")
+<<<<<<< HEAD
+voice_streams = Array[AudioStream]([ExtResource("2_c0804"), null])
+=======
 voice_streams = Array[AudioStream]([SubResource("AudioStreamWAV_7e5hi"), ExtResource("2_vu35n"), ExtResource("3_u24lf"), ExtResource("4_jpsjq"), ExtResource("2_c0804"), ExtResource("6_m30wi"), ExtResource("7_geau1"), ExtResource("8_fwdn7"), ExtResource("9_egsy1"), ExtResource("10_ma8p7"), ExtResource("11_cxuda"), ExtResource("12_8h5vp"), ExtResource("13_bhlph"), ExtResource("14_ml5vx"), ExtResource("15_e88xv"), ExtResource("16_wj1js")])
+>>>>>>> main
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=975921864]
 
