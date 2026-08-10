@@ -3,7 +3,7 @@
 ~ intro
 # Black background, white text, in an old/ancient but legible font.
 # Each line should fade in one by one. Let the player sit with each sentence. Then, fade them all to black.
-
+$> DialogueDump.play_aud("res://audio/soundtrack6.wav")
 INTROTEXT: Hear us, lord of scales,
 INTROTEXT: We must empty Purgatory with our prayers
 INTROTEXT: and tired hearts.
@@ -81,6 +81,7 @@ $> DialogueDump.pb.start(null, "seamore")
 SEAMORE: ...
 $> DialogueDump.play_aud("res://audio/1_seamore_intro_line.wav")
 SEAMORE: I'm just a little guy.
+$> DialogueDump.stop_aud("res://audio/1_seamore_intro_line.wav")
 $> DialogueDump.pb.hide()
 
 # TODO: ANGEL UI - VIRTUE - Best Accountant in San Diego 2014 - 2019.
@@ -90,12 +91,12 @@ $> DialogueDump.pb.hide()
 - Drag to Heaven
 	$> DialogueDump.demonending +=1
 	$> DialogueDump.ab.start(null, "seamoreheaven_angel_1")
-	=> seamoreheaven_angel_1
+	=> END
 - Drag to Hell 
 	$> DialogueDump.trueending += 1
 	$> DialogueDump.angelending += 1
 	$> DialogueDump.db.start(null, "seamorehell_demon_1")
-	=> seamorehell_demon_1
+	=> END
 	
 ~ seamoreheaven_angel_1
 
@@ -400,7 +401,14 @@ else
 		=> purgatoryending_angel_1
 
 ~ angelending
+<<<<<<< HEAD
 $> DialogueDump.end() == true
+=======
+$> DialogueDump.angelending == 0
+$> DialogueDump.trueending == 0
+$> DialogueDump.demonending == 0
+$> var.endingmet == true
+>>>>>>> Judge/dialogue-and-narrative
 => END
 # TODO: angelending_letter UI/asset - angelic seal/letterhead on corporate paper
 # Offer of Ascension
@@ -429,7 +437,14 @@ DEMON: I'll put in a word for you --
 DEMON: Downstairs. 
 $> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.hide()
+<<<<<<< HEAD
 $> DialogueDump.end() == true
+=======
+$> var.endingmet == true
+$> DialogueDump.angelending == 0
+$> DialogueDump.trueending == 0
+$> DialogueDump.demonending == 0
+>>>>>>> Judge/dialogue-and-narrative
 => END
  
 # TODO: demonending_letter UI/asset - angelic seal/letterhead on corporate paper
@@ -455,7 +470,14 @@ DEMON: Some good decisions, some bad decisions.
 DEMON: And isn't that a kind balance in itself?
 $> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.hide()
+<<<<<<< HEAD
 $> DialogueDump.end() == true
+=======
+$> var.endingmet == true
+$> DialogueDump.angelending == 0
+$> DialogueDump.trueending == 0
+$> DialogueDump.demonending == 0
+>>>>>>> Judge/dialogue-and-narrative
 => END
 	
 # TODO: purgatoryending_letter UI/asset - purgatory seal/symbol/lettehead
@@ -469,7 +491,14 @@ $> DialogueDump.end() == true
 # The Office of Purgatory
 
 ~ trueending
+<<<<<<< HEAD
 $> DialogueDump.end() == true
+=======
+$> DialogueDump.angelending == 0
+$> DialogueDump.trueending == 0
+$> DialogueDump.demonending == 0
+$> var.endingmet == true
+>>>>>>> Judge/dialogue-and-narrative
 => END
 #TODO: trueending_letter UI/asset - purgatory seal/letterhead on corporate paper
 # Notice of Termination
