@@ -7,7 +7,7 @@ extends Node
 @export var VirtueList: RichTextLabel
 @export var VirtueScroll: TextureRect
 @export var SinScroll: TextureRect
-#@export var Character: CharacterSprite
+@export var Character: CharacterSprite
 
 var CurIndex = 0
 
@@ -44,9 +44,9 @@ func _process(delta: float) -> void:
 func On():
 	SinScroll.visible = true
 	VirtueScroll.visible = true
-	#Character.start()
+	Character.start(Characters[CurIndex].characterTexture)
 
 func Off():
-	#Character.reset()
+	Character.reset()
 	SinScroll.visible = false
 	VirtueScroll.visible = false

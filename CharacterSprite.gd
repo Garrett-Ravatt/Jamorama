@@ -3,9 +3,12 @@ extends Sprite3D
 
 var isMoving: bool
 
-func begin(texture2: Texture):
+func start(texture2: Texture):
 	texture = texture2
 	isMoving = true
+
+func reset():
+	position.x = 1.5
 	
 func isPickedUp():
 	visible = false
