@@ -163,11 +163,11 @@ $> DialogueDump.pb.hide()
 	$> DialogueDump.demonending +=1
 	$> DialogueDump.trueending += 1
 	$> DialogueDump.ab.start(null, "robinsonheaven_angel_1")
-	=> robinsonheaven_angel_1
+	=> END
 - Drag to Hell
 	$> DialogueDump.angelending += 1
 	$> DialogueDump.ab.start(null, "robinsonhell_angel_1")
-	=> robinsonhell_angel_1
+	=> END
 	
 ~ robinsonheaven_angel_1
 
@@ -221,12 +221,12 @@ $> DialogueDump.pb.hide()
 	$> DialogueDump.truending += 1
 	$> DialogueDump.demonending +=1
 	$> DialogueDump.ab.start(null,"angelaheaven_angel_1")
-	=> angelaheaven_angel_1
+	=> END
 - Drag to Hell
 	# MAYBE devil dialogue
 	$> DialogueDump.angelending += 1
 	$> DialogueDump.db.start(null,"angelaheaven_demon_1")
-		=> angelahell_demon_1
+	=> END
 	
 ~ angelaheaven_angel_1
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
@@ -264,14 +264,14 @@ TREYMOUR: ...
 	# MAYBE angel popup dialogue
 	$> DialogueDump.demonending +=1
 	$> DialogueDump.ab.start(null,"treymourheaven_angel_1")
-	=> treymourheaven_angel_1
+	=> END
 
 - Drag to Hell 
 	# MAYBE devil popup dialogue
 	$> DialogueDump.trueending += 1
 	$> DialogueDump.angelending += 1
 	$> DialogueDump.db.start(null,"treymourhell_demon_1")
-	=> treymourhell_demon_1
+	=> END
 	
 ~ treymourheaven_angel_1
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
@@ -334,12 +334,12 @@ $> DialogueDump.pb.hide()
 	# MAYBE angel popup dialogue
 	$> DialogueDump.angelending += 1
 	$> DialogueDump.ab.start(null,"chloeheaven_angel_0")
-	=> chloeheaven_angel_0
+	=> END
 - Drag to Hell 
 	# MAYBE devil popup dialogue
 	$> DialogueDump.trueending += 1
 	$> DialogueDump.ab.start(null,"chloehell_angel_1")
-	=> chloehell_angel_1
+	=> END
 	
 ~ chloeheaven_angel_0
 
