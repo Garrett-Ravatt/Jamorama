@@ -20,6 +20,12 @@ var cm: CharacterManager
 func end():
 	pass
 
+func new_character():
+	cm.next_character()
+	
+func reset_character():
+	cm.off()
+
 func play_aud(s,b = false):
 	var p := AudioStreamPlayer.new()
 		

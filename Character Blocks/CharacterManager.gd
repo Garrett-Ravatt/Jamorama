@@ -9,7 +9,7 @@ extends Node
 @export var SinScroll: TextureRect
 @export var Character: CharacterSprite
 
-var CurIndex = 0
+var CurIndex = -1
 
 
 func next_character() -> void:
@@ -24,6 +24,7 @@ func next_character() -> void:
 		VirtueList.text = ""
 		for x in Characters[CurIndex].virtues:
 			VirtueList.text += x + "\n"
+		On()
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

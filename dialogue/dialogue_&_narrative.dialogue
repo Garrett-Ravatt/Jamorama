@@ -77,11 +77,12 @@ $> DialogueDump.pb.start(null, "seamore")
 
 # Seamore could stand to look really pitiful
 # He walks up/fades in.
-
+$> DialogueDump.new_character()
 SEAMORE: ...
 $> DialogueDump.play_aud("res://audio/1_seamore_intro_line.wav")
 SEAMORE: I'm just a little guy.
 $> DialogueDump.pb.hide()
+
 
 # TODO: ANGEL UI - VIRTUE - Best Accountant in San Diego 2014 - 2019.
 # TODO: DEMON UI - SIN - Did somebody's taxes "wrong" in 2020.
