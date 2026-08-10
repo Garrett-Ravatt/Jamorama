@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b1b3jetfqrwek" path="res://scenes/plea_scene.gd" id="1_6cslh"]
 [ext_resource type="PackedScene" uid="uid://crvkl0w8c3p2m" path="res://ui/free_balloon_II.tscn" id="1_lsh2j"]
+<<<<<<< Updated upstream
 [ext_resource type="AudioStream" uid="uid://b1uld55g4ivk7" path="res://audio/devil_talking.wav" id="2_c0804"]
 [ext_resource type="Texture2D" uid="uid://bokr4grbahset" path="res://ui/Heaven_Bar_Expanded.png" id="2_gic2n"]
 [ext_resource type="AudioStream" uid="uid://b1mnmdtmt375b" path="res://audio/soundtrack.wav" id="2_vu35n"]
+=======
+[ext_resource type="Texture2D" uid="uid://bokr4grbahset" path="res://ui/Heaven_Bar_Expanded.png" id="2_gic2n"]
+>>>>>>> Stashed changes
 [ext_resource type="Script" uid="uid://dxo1j6cy0syca" path="res://scenes/slot.gd" id="3_gic2n"]
 [ext_resource type="AudioStream" uid="uid://dv31psmnw1mme" path="res://audio/scroll.wav" id="3_u24lf"]
 [ext_resource type="AudioStream" uid="uid://dde6dfrqwgtdr" path="res://audio/main_menu.wav" id="4_jpsjq"]
@@ -13,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://chcesxlhq574i" path="res://ui/Hell_Bar_Expanded.png" id="5_lneks"]
 [ext_resource type="Script" uid="uid://befiy3svu1qbg" path="res://scenes/drag_object.gd" id="5_lsh2j"]
 [ext_resource type="Texture2D" uid="uid://b61tqvjy42suh" path="res://ui/Square_Guy.png" id="6_7e5hi"]
+<<<<<<< Updated upstream
 [ext_resource type="AudioStream" uid="uid://yqfp83it6b3v" path="res://audio/angel_talking.wav" id="6_m30wi"]
 [ext_resource type="AudioStream" uid="uid://c0thu1ussfrw4" path="res://audio/droppedintohell.wav" id="7_geau1"]
 [ext_resource type="AudioStream" uid="uid://cpqhdljobkj8t" path="res://audio/droppedintoheaven.wav" id="8_fwdn7"]
@@ -24,6 +29,8 @@
 [ext_resource type="AudioStream" uid="uid://ca8ux7vu0i0ln" path="res://audio/6_treymour_pickup_lines.wav" id="14_ml5vx"]
 [ext_resource type="AudioStream" uid="uid://dd81jc2mnfkj5" path="res://audio/7_chloe_intro_lines.wav" id="15_e88xv"]
 [ext_resource type="AudioStream" uid="uid://p1fgaf04ok1w" path="res://audio/8_chloe_pickup_lines.wav" id="16_wj1js"]
+=======
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://dc63mjn7neuhi" path="res://ui/Virtue_Scroll.png" id="25_8h5vp"]
 [ext_resource type="Texture2D" uid="uid://cy50rhvwcahbc" path="res://ui/Sin_Scroll.png" id="26_bhlph"]
 [ext_resource type="Script" uid="uid://bwowwr12s4ge1" path="res://Character Blocks/CharacterManager.gd" id="27_ml5vx"]
@@ -45,7 +52,10 @@ default_font_size = 11
 
 [node name="Node2D" type="Node2D" unique_id=332241087]
 script = ExtResource("1_6cslh")
+<<<<<<< Updated upstream
 voice_streams = Array[AudioStream]([SubResource("AudioStreamWAV_7e5hi"), ExtResource("2_vu35n"), ExtResource("3_u24lf"), ExtResource("4_jpsjq"), ExtResource("2_c0804"), ExtResource("6_m30wi"), ExtResource("7_geau1"), ExtResource("8_fwdn7"), ExtResource("9_egsy1"), ExtResource("10_ma8p7"), ExtResource("11_cxuda"), ExtResource("12_8h5vp"), ExtResource("13_bhlph"), ExtResource("14_ml5vx"), ExtResource("15_e88xv"), ExtResource("16_wj1js")])
+=======
+>>>>>>> Stashed changes
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=975921864]
 visible = false
