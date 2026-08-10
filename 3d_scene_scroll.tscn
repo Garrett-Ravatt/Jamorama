@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dyygfb5lff8tk"]
+
+[ext_resource type="PackedScene" uid="uid://c75ktaioca62g" path="res://Scene Objects/AntiqueTable.tscn" id="1_2327f"]
+[ext_resource type="PackedScene" uid="uid://ddq7nd7gxw3yy" path="res://Models/TheLamp.fbx" id="2_h61xp"]
+[ext_resource type="PackedScene" uid="uid://cmsbu7ufjsndn" path="res://Models/DevilBobble.glb" id="3_wub6i"]
+[ext_resource type="PackedScene" uid="uid://dmoiv2wjs2fww" path="res://Models/cherub_extracted/source/cherib.fbx" id="4_av5u0"]
+[ext_resource type="PackedScene" uid="uid://cds7javjejd00" path="res://Models/Scroll/Scroll_Bake_L1.glb" id="5_h61xp"]
+[ext_resource type="PackedScene" uid="uid://c8tu7lak757mv" path="res://Models/Scroll/Scroll_Bake_L2.glb" id="6_8ctao"]
+[ext_resource type="PackedScene" uid="uid://bl7ejdid3c15k" path="res://Models/Scroll/Scroll_Bake_L3.glb" id="7_5n8vo"]
+[ext_resource type="PackedScene" uid="uid://dmvjd2q4wuw2h" path="res://Models/Scroll/Scroll_Bake_L4.glb" id="8_kjx2f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slvn6"]
+
+[sub_resource type="Sky" id="Sky_6pkvk"]
+sky_material = SubResource("ProceduralSkyMaterial_slvn6")
+
+[sub_resource type="Environment" id="Environment_56htp"]
+background_mode = 2
+sky = SubResource("Sky_6pkvk")
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.21502772, 0.3038144, 0.42154092, 1)
+volumetric_fog_emission = Color(0.3438879, 0.3750475, 0.4650089, 1)
+volumetric_fog_sky_affect = 0.853
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qxthg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6y4ci"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56w07"]
+albedo_color = Color(0.8865831, 0.8755477, 0.9723796, 1)
+
+[node name="3DScene_Angela" type="Node3D" unique_id=351432302]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1729677590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97422314, 1.8360779)
+fov = 16.7
+far = 47.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=249343718]
+environment = SubResource("Environment_56htp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=559938074]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -1643.6201)
+light_color = Color(1, 1, 0.93333334, 1)
+light_angular_distance = 5.0
+
+[node name="SpotLight3D_Key" type="SpotLight3D" parent="." unique_id=1181184776]
+transform = Transform3D(0.9881298, 0.13486505, -0.073558785, 0, 0.47883227, 0.87790644, 0.1536212, -0.8674855, 0.47314844, -0.3746549, 1.969002, 0.90794134)
+light_color = Color(0.8, 0.67058825, 0.52156866, 1)
+light_energy = 2.5
+
+[node name="SpotLight3D_Fill" type="SpotLight3D" parent="." unique_id=1238178019]
+transform = Transform3D(0.20321448, -0.3995974, 0.89388245, 0.039624926, 0.91553986, 0.40027076, -0.97833216, -0.045920786, 0.20188497, 1.6477153, 1.2061454, 0.24111915)
+light_color = Color(0.677807, 0.6946793, 0.74133307, 1)
+light_energy = 2.5
+light_volumetric_fog_energy = 2.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1738929668]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1349533648]
+shape = SubResource("WorldBoundaryShape3D_qxthg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=766832559]
+transform = Transform3D(314.479, 0, 0, 0, 1.183, 0, 0, 0, 924.6644, 2.486392, -7.277313, -857.443)
+mesh = SubResource("PlaneMesh_6y4ci")
+surface_material_override/0 = SubResource("StandardMaterial3D_56w07")
+
+[node name="Desk" parent="." unique_id=1447024193 instance=ExtResource("1_2327f")]
+transform = Transform3D(0.61669344, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="TheLamp" parent="." unique_id=904679296 instance=ExtResource("2_h61xp")]
+transform = Transform3D(0.894573, 0, -0.44692189, 0, 1, 0, 0.44692189, 0, 0.894573, -0.4156568, 0.81191045, -0.23096205)
+
+[node name="DevilBobble" parent="." unique_id=1498194964 instance=ExtResource("3_wub6i")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.2836635, 0.775, -0.03440039)
+
+[node name="cherib" parent="." unique_id=1311036975 instance=ExtResource("4_av5u0")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.27873337, 1.2080669, -0.068552)
+
+[node name="Scroll_Bake_L1" parent="." unique_id=1872881443 instance=ExtResource("5_h61xp")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -2.2352557, 0.25749624, 0.8232547)
+
+[node name="Scroll_Bake_L2" parent="." unique_id=1038883932 instance=ExtResource("6_8ctao")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -2.6024187, 0.25749624, 0.8232547)
+
+[node name="Scroll_Bake_L3" parent="." unique_id=559701464 instance=ExtResource("7_5n8vo")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -3.00024, 0.25749624, 0.8232547)
+
+[node name="Scroll_Bake_L4" parent="." unique_id=1047330641 instance=ExtResource("8_kjx2f")]
+transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -3.3742142, 0.25749624, 0.8232547)
