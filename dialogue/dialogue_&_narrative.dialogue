@@ -55,14 +55,18 @@ $> DialogueDump.ab.start(null, "tutorial_angel_3")
 => END
 
 ~ tutorial_angel_3
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: But, like, no pressure.
 ANGEL: :)
 ANGEL: Oh, and by the way, if you ever need council on your decisions...
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null, "tutorial_demon_4")
 => END
 
 ~ tutorial_demon_4
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: They can't hear us.
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.pb.hide()
 $> DialogueDump.pb.start(null, "seamore")
 => END
@@ -75,6 +79,7 @@ $> DialogueDump.pb.start(null, "seamore")
 # He walks up/fades in.
 
 SEAMORE: ...
+$> DialogueDump.play_aud("res://audio/1_seamore_intro_line.wav")
 SEAMORE: I'm just a little guy.
 $> DialogueDump.pb.hide()
 
@@ -94,23 +99,31 @@ $> DialogueDump.pb.hide()
 	
 ~ seamoreheaven_angel_1
 
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Interesting choice...
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null, "seamoreheaven_demon_1")
 => END
 
 ~ seamoreheaven_demon_1
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: Heheheh.
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.ab.start(null, "seamoreheaven_angel_2")
 => END
 
 ~ seamoreheaven_angel_2
 
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: What are you laughing about?
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null, "seamoreheaven_demon_2")
 => END
 
 ~ seamoreheaven_demon_2
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: The new guy has a sense of humor.
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.pb.start(null, "robinson")
 $> DialogueDump.db.hide()
 => END
@@ -118,14 +131,17 @@ $> DialogueDump.db.hide()
 => robinson
 
 ~ seamorehell_demon_1
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: I can't wait to torture that guy!
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.ab.start(null, "seamorehell_angel_1")
 => END
 
 ~ seamorehell_angel_1
-
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: That was a wise decision.
 ANGEL: Keep up the good work. :)
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 $> DialogueDump.ab.hide()
 $> DialogueDump.pb.start(null, "robinson")
 => END
