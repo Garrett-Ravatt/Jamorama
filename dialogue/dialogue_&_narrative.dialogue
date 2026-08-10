@@ -92,7 +92,7 @@ $> DialogueDump.pb.hide()
 	$> DialogueDump.ab.start(null, "seamoreheaven_angel_1")
 	=> seamoreheaven_angel_1
 - Drag to Hell 
-	$> DiaglogueDump.trueending += 1
+	$> DialogueDump.trueending += 1
 	$> DialogueDump.angelending += 1
 	$> DialogueDump.db.start(null, "seamorehell_demon_1")
 	=> seamorehell_demon_1
@@ -149,8 +149,10 @@ $> DialogueDump.pb.start(null, "robinson")
 => robinson
 
 ~ robinson
+$> DialogueDump.play_aud("res://audio/3_robinson_intro_lines.wav")
 ROBINSON: God-damned, no-good surgeons…
 ROBINSON: Well, there's no point in delaying it now.
+$> DialogueDump.play_aud("res://audio/3_robinson_intro_lines.wav")
 $> DialogueDump.pb.hide()
 
 # TODO: ANGEL UI - VIRTUE - Always returned the shopping cart. 
