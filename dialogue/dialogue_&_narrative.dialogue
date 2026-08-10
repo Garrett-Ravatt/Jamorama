@@ -149,10 +149,9 @@ $> DialogueDump.pb.start(null, "robinson")
 => robinson
 
 ~ robinson
-$> DialogueDump.play_aud("res://audio/3_robinson_intro_lines.wav")
 ROBINSON: God-damned, no-good surgeons…
-ROBINSON: Well, there's no point in delaying it now.
 $> DialogueDump.play_aud("res://audio/3_robinson_intro_lines.wav")
+ROBINSON: Well, there's no point in delaying it now.
 $> DialogueDump.pb.hide()
 
 # TODO: ANGEL UI - VIRTUE - Always returned the shopping cart. 
@@ -171,14 +170,18 @@ $> DialogueDump.pb.hide()
 	
 ~ robinsonheaven_angel_1
 
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Even with...
 ANGEL: Very well. 
 ANGEL: It's difficult, but I can see the good in him.
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null,"robinsonheaven_demon_1")
 => END
 
 ~ robinsonheaven_demon_1
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: Aww, I had a lovely cauldron of oil for him.
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.hide()
 $> DialogueDump.pb.play(null,"angela")
 => END
@@ -186,13 +189,17 @@ $> DialogueDump.pb.play(null,"angela")
 => angela
 
 ~ robinsonhell_angel_1
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Nicely done.
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.start(null,"robinsonhell_demon_1")
 $> DialogueDump.ab.hide()
 => END
 
 ~ robinsonhell_demon_1
-DEMON: Wonderful. 
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+DEMON: Wonderful.
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.pb.play(null,"angela")
 $> DialogueDump.db.hide()
 => END
@@ -200,7 +207,6 @@ $> DialogueDump.db.hide()
 => angela
 
 ~ angela
-
 ANGELA: E-E-Excuse me?
 ANGELA: Is i-it too much to ask you to put me with m-my brother?
 $> DialogueDump.pb.hide()
@@ -222,19 +228,23 @@ $> DialogueDump.pb.hide()
 		=> angelahell_demon_1
 	
 ~ angelaheaven_angel_1
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Really?
 ANGEL: Who was she to decide who lives and who dies? 
 ANGEL: You need to think harder about these things...
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.pb.play(null,"treymour")
 $> DialogueDump.ab.hide()
 => END
 => treymour
 	
 ~ angelhell_demon_1
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: Everybody thinks I prefer to torment bad [#italicize 'bad'] people.
 DEMON: But that's hardly true.
 DEMON: What I mean to say is...
 DEMON: You're good at this.
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 $> DialogueDump.pb.play(null,"treymour")
 $> DialogueDump.db.hide()
 => END
@@ -263,27 +273,36 @@ TREYMOUR: ...
 	=> treymourhell_demon_1
 	
 ~ treymourheaven_angel_1
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: A murderer?! In Heaven?!
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
+
 $> DialogueDump.db.start(null,"treymourhell_demon_1")
 => END
 
 ~ treymourheaven_demon_1
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: HAHAHA. AMAZING.
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.ab.start(null,"treymourhell_angel_2")
 => END
 
 ~ treymourheaven_angel_2
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: It's not just about the people here.  
 ANGEL: Think about the people already in Heaven.
 ANGEL: A little mercy is good, but too much... 
 ANGEL: I don't want to report you to management, but I will.
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.pb.play(null,"chloe")
 => END
 	
 => chloe
 	
 ~ treymourhell_demon_1
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: Mm, what delectable guilt.
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.ab.start(null,"treymourhell_angel_1")
 => END
 
@@ -296,7 +315,8 @@ $> DialogueDump.ab.hide()
 => chloe
 	
 ~ chloe
-	
+
+$> DialogueDump.play_aud("res://audio/7_chloe_intro_lines.wav")
 CHLOE: I was murdered.
 CHLOE: So, yeah, you know what to do.
 $> DialogueDump.pb.hide()
@@ -324,34 +344,45 @@ $> DialogueDump.pb.hide()
 
 if DialogueDump.angelending >= 5
 	~ chloeheaven_angel_1
+	$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 	ANGEL: There are few people who can put their personal feelings aside.
 	ANGEL: And make the right decision.
+	$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 	ANGEL: You made the right decision five times in a row.
 	ANGEL: I'm so proud of you.
+	$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 	$> DialogueDump.db.start(null,"chloeheaven_demon_1")
 	=> END
 	
 	~ chloeheaven_demon_1
+	$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 	DEMON: In fact... even I can admit...
+	$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 	DEMON: It's the only [#italicize 'only'] right decision you made all day.
 	=> END
 	=> angelending
 
 else DialogueDump.angelending <= 4
+	$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 	ANGEL: I know these decisions may feel unfair... 
 	ANGEL: But are times when mercy is fairer because it's random.
+	$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 	
 	=> endingchecks
 
 ~ chloehell_angel_1
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Do you have no heart?
 ANGEL: Haven't you sent enough people to the pit today?
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null,"chloehell_demon_1")
 => END
 
 ~ chloehell_demon_1
-DEMON: Don't listen to her.
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+DEMON: Don't listen to them.
 DEMON: I think you sent that girl exactly where she needs to be.
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 => endingchecks
 
 ~ endingchecks
@@ -369,6 +400,7 @@ else
 		=> purgatoryending_angel_1
 
 ~ angelending
+$> var.endingmet == true
 => END
 # TODO: angelending_letter UI/asset - angelic seal/letterhead on corporate paper
 # Offer of Ascension
@@ -381,17 +413,23 @@ else
 # The Department of Heaven
 
 ~ demonending_angel_1
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: I'm happy you could make the right decision. 
 ANGEL: But I'm afraid you made it too late.
 ANGEL: [# betrayed] I've already... I've already lodged a complaint with management. [#melodramatic sniffle] 
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null,"demonending_demon_1")
 => END
 
 ~ demonending_demon_1
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: Don't listen to goody-goody.
 DEMON: So what if you lose your job here?
-DEMON: I'll put in a word for you downstairs...
+DEMON: I'll put in a word for you --
+DEMON: Downstairs. 
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.hide()
+$> var.endingmet == true
 => END
  
 # TODO: demonending_letter UI/asset - angelic seal/letterhead on corporate paper
@@ -405,13 +443,19 @@ $> DialogueDump.db.hide()
 # The Directorate of Hell
 
 ~ purgatoryending_angel_1
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Well, I guess I can't complain.
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null,"purgatoryending_demon_1")
+=> END
 
 ~ purgatoryending_demon_1
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: Some good decisions, some bad decisions.
 DEMON: And isn't that a kind balance in itself?
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.hide()
+$> var.endingmet == true
 => END
 	
 # TODO: purgatoryending_letter UI/asset - purgatory seal/symbol/lettehead
@@ -425,6 +469,8 @@ $> DialogueDump.db.hide()
 # The Office of Purgatory
 
 ~ trueending
+$> var.endingmet == true
+=> END
 #TODO: trueending_letter UI/asset - purgatory seal/letterhead on corporate paper
 # Notice of Termination
 # This letter confirms that your employment with the Office of Purgatory is terminated effective immediately.
