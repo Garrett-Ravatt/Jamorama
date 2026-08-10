@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="SoulData" format=3 uid="uid://ubsrbrc63cyo"]
 
+[ext_resource type="Texture2D" uid="uid://owfbyl30g4un" path="res://character_sprites/Chloe.png" id="1_eam2u"]
 [ext_resource type="Script" uid="uid://dbr2jk0a1lug5" path="res://Character Blocks/soul_data.gd" id="1_ls3sn"]
 
 [resource]
@@ -8,4 +9,5 @@ sins = Array[String](["Framed her brother for $900,000 in tax fraud."])
 virtues = Array[String](["Was a Red Cross doctor."])
 id = 4
 name = "Chloe"
+characterTexture = ExtResource("1_eam2u")
 metadata/_custom_type_script = "uid://dbr2jk0a1lug5"

@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="SoulData" format=3 uid="uid://cayjidgkgviub"]
 
 [ext_resource type="Script" uid="uid://dbr2jk0a1lug5" path="res://Character Blocks/soul_data.gd" id="1_ndxos"]
+[ext_resource type="Texture2D" uid="uid://q6jvmr8st4uo" path="res://character_sprites/Robinson.png" id="1_omwvy"]
 
 [resource]
 script = ExtResource("1_ndxos")
@@ -10,4 +11,5 @@ id = 1
 name = "Robinson"
 introductionStatement = "God-damned, no-good surgeons…Well, there’s no point in delaying it now."
 pickupExclimation = "Oh, just make it quick!"
+characterTexture = ExtResource("1_omwvy")
 metadata/_custom_type_script = "uid://dbr2jk0a1lug5"

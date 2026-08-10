@@ -8,8 +8,9 @@ extends Node
 @export var VirtueScroll: TextureRect
 @export var SinScroll: TextureRect
 @export var Character: CharacterSprite
+@export var DragSquare: TextureRect
 
-var CurIndex = 0
+var CurIndex = -1
 
 
 func next_character() -> void:
@@ -24,6 +25,7 @@ func next_character() -> void:
 		VirtueList.text = ""
 		for x in Characters[CurIndex].virtues:
 			VirtueList.text += x + "\n"
+		On()
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -45,8 +47,16 @@ func On():
 	SinScroll.visible = true
 	VirtueScroll.visible = true
 	Character.start(Characters[CurIndex].characterTexture)
+	DragSquare.visible = true
 
 func Off():
 	Character.reset()
 	SinScroll.visible = false
 	VirtueScroll.visible = false
+	DragSquare.visible = false
+
+func picked_up():
+	Character.isPickedUp()
+	
+func put_down():
+	Character.isPutDown()

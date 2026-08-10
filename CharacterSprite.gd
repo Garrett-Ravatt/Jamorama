@@ -26,4 +26,5 @@ func _process(delta: float) -> void:
 	if position.x >0 and isMoving:
 		position.x -= .05
 	if position.x < 0:
+		isMoving = false
 		position.x = 0
