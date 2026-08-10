@@ -3,20 +3,12 @@
 ~ intro
 # Black background, white text, in an old/ancient but legible font.
 # Each line should fade in one by one. Let the player sit with each sentence. Then, fade them all to black.
-<<<<<<< Updated upstream
-$> DialogueDump.play_aud("res://audio/soundtrack6.wav")
-INTROTEXT: Hear us, lord of scales,
-INTROTEXT: We must empty Purgatory with our prayers
-INTROTEXT: and tired hearts.
-# 
-=======
 $> wait(0.1)
 $> DialogueDump.play_aud("res://audio/soundtrack.wav")
 : "Hear us, lord of scales,
 : we must empty Purgatory with our prayers
 : and tired our hearts."
 $> DialogueDump.db.start(null, "tutorial_demon_1")
->>>>>>> Stashed changes
 => tutorial_demon_1
 # Load into the main environment of the game -- the desk in front of the wasteland of purgatory.
 # TODO: Text progresses as you click it.
@@ -152,13 +144,8 @@ $> DialogueDump.ab.start(null, "seamorehell_angel_1")
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: That was a wise decision.
 ANGEL: Keep up the good work. :)
-<<<<<<< Updated upstream
-$> DialogueDump.play_aud("res://audio/angel_talking.wav")
-$> DialogueDump.ab.hide()
-=======
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 #$> DialogueDump.ab.hide()
->>>>>>> Stashed changes
 $> DialogueDump.pb.start(null, "robinson")
 => END
 
@@ -175,7 +162,7 @@ $> DialogueDump.pb.hide()
 # TODO: Upon pickup, triggers only once: UI ROBINSON PICKUP EXCLAMATION - Oh, just get it over with!
 
 - Drag to Heaven
-	$> DialogueDump.demonending +=1
+	$> DialogueDump.demonending += 1
 	$> DialogueDump.trueending += 1
 	$> DialogueDump.ab.start(null, "robinsonheaven_angel_1")
 	=> END
@@ -197,15 +184,9 @@ $> DialogueDump.db.start(null,"robinsonheaven_demon_1")
 ~ robinsonheaven_demon_1
 $> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Aww, I had a lovely cauldron of oil for him.
-<<<<<<< Updated upstream
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
-$> DialogueDump.db.hide()
-$> DialogueDump.pb.play(null,"angela")
-=======
 $> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 #$> DialogueDump.db.hide()
 $> DialogueDump.pb.start(null,"angela")
->>>>>>> Stashed changes
 => END
 
 => angela
@@ -221,25 +202,16 @@ $> DialogueDump.ab.hide()
 ~ robinsonhell_demon_1
 $> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Wonderful.
-<<<<<<< Updated upstream
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
-$> DialogueDump.pb.play(null,"angela")
-$> DialogueDump.db.hide()
-=======
 $> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.pb.start(null,"angela")
 #$> DialogueDump.db.hide()
->>>>>>> Stashed changes
 => END
 
 => angela
 
 ~ angela
-<<<<<<< Updated upstream
-=======
 $> DialogueDump.new_character()
 $> DialogueDump.play_aud("res://audio/5_angela_intro_lines.wav")
->>>>>>> Stashed changes
 ANGELA: E-E-Excuse me?
 ANGELA: Is i-it too much to ask you to put me with m-my brother?
 ANGELA: Whereever he is...
@@ -292,16 +264,12 @@ DEMON: What I mean to say is...
 DEMON: Misplacements are more fun.
 $> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.pb.start(null,"treymour")
->>>>>>> Stashed changes
 => END
 => treymour
 	
 ~ treymour
-<<<<<<< Updated upstream
-=======
 $> DialogueDump.new_character()
 $> DialogueDump.play_aud("res://audio/6_treymour_intro_lines.wav")
->>>>>>> Stashed changes
 TREYMOUR: I'm sorry, I'm so sorry...
 TREYMOUR: ... Oh, God... God, forgive me...
 $> DialogueDump.stop_aud("res://audio/6_treymour_intro_lines.wav")
@@ -343,16 +311,11 @@ $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: It's not just about the people here.  
 ANGEL: Think about the people already in Heaven.
 ANGEL: I don't want to report you to management, but I will.
-<<<<<<< Updated upstream
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
-$> DialogueDump.pb.play(null,"chloe")
-=======
 ANGEL: Speaking of management...
 ANGEL: They want you to send the next one upstairs right away.
 ANGEL: Do that and maybe you'll keep your job.
 $> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.pb.start(null,"chloe")
->>>>>>> Stashed changes
 => END
 	
 => chloe
@@ -365,11 +328,6 @@ $> DialogueDump.ab.start(null,"treymourhell_angel_1")
 => END
 
 ~ treymourhell_angel_1
-<<<<<<< Updated upstream
-ANGEL: ...
-$> DialogueDump.db.start(null,"chloe")
-$> DialogueDump.ab.hide()
-=======
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Oh, I just got word from management.
 ANGEL: Don't worry about this next one.
@@ -377,7 +335,6 @@ ANGEL: Send her upstairs right away.
 ANGEL: I'm sure you understand.
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.pb.start(null,"chloe")
->>>>>>> Stashed changes
 => END
 
 => chloe
@@ -439,10 +396,6 @@ else
 	ANGEL: I know these decisions may feel unfair... 
 	ANGEL: But there are times when mercy is fairer because it's random.
 	$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
-<<<<<<< Updated upstream
-	
-	=> endingchecks
-=======
 	$> DialogueDump.db.start(null,"unfair_demon_1")
 	#$> DialogueDump.db.start(null,"endingchecks")
 	=> END
@@ -455,7 +408,6 @@ else
 	=> END
 	
 	#=> endingchecks
->>>>>>> Stashed changes
 
 ~ chloehell_angel_1
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
@@ -479,16 +431,10 @@ else
 		=> purgatoryending_angel
 
 ~ angelending
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-$> DialogueDump.end() == true
-=======
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
 $> var.endingmet == true
->>>>>>> Judge/dialogue-and-narrative
-=======
 #$> DialogueDump.end("Scroll_Bake_L2")
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
@@ -502,7 +448,6 @@ OFFER OF ASCENSION: Congratulations.
 OFFER OF ASCENSION: We look forward to your response.
 OFFER OF ASCENSION: Sincerely,
 OFFER OF ASCENSION: The Department of Heavenly Affairs
->>>>>>> Stashed changes
 => END
 # TODO: angelending_letter UI/asset - angelic seal/letterhead on corporate paper
 # Offer of Ascension
@@ -527,15 +472,6 @@ $> DialogueDump.db.start(null,"demonending_demon_1")
 $> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Don't listen to goody-goody.
 DEMON: So what if you lose your job here?
-<<<<<<< Updated upstream
-DEMON: I'll put in a word for you --
-DEMON: Downstairs. 
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
-$> DialogueDump.db.hide()
-<<<<<<< HEAD
-$> DialogueDump.end() == true
-=======
-=======
 DEMON: I'll put in a word for you. Downstairs. 
 $> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.pb.start(null,"demonending_offer")
@@ -552,12 +488,10 @@ OFFER OF INIQUITY: We look forward to seeing you among our ranks.
 OFFER OF INIQUITY: Deliciously,
 OFFER OF INIQUITY: The Directorate of Hell
 #$> DialogueDump.end("Scroll_Bake_L1")
->>>>>>> Stashed changes
 $> var.endingmet == true
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
->>>>>>> Judge/dialogue-and-narrative
 => END
  
 # TODO: demonending_letter UI/asset - angelic seal/letterhead on corporate paper
@@ -583,13 +517,6 @@ $> DialogueDump.db.start(null,"purgatoryending_demon_1")
 $> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Some good decisions, some bad decisions.
 DEMON: And isn't that a kind balance in itself?
-<<<<<<< Updated upstream
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
-$> DialogueDump.db.hide()
-<<<<<<< HEAD
-$> DialogueDump.end() == true
-=======
-=======
 $> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.pb.start(null,"purgatoryending_notice")
 #$> DialogueDump.db.hide()
@@ -604,12 +531,10 @@ RECOGNITION OF STANDING SERVICE: You understand balance needs no progress.
 RECOGNITION OF STANDING SERVICE: Keep up the mediocre work.
 RECOGNITION OF STANDING SERVICE: Lukewarmly,
 RECOGNITION OF STANDING SERVICE: The Office of Purgatory
->>>>>>> Stashed changes
 $> var.endingmet == true
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
->>>>>>> Judge/dialogue-and-narrative
 => END
 	
 # TODO: purgatoryending_letter UI/asset - purgatory seal/symbol/lettehead
@@ -622,12 +547,6 @@ $> DialogueDump.demonending == 0
 # Lukewarmly, 
 # The Office of Purgatory
 
-<<<<<<< Updated upstream
-~ trueending
-<<<<<<< HEAD
-$> DialogueDump.end() == true
-=======
-=======
 ~ trueending_demon_1
 $> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Not even close!
@@ -658,12 +577,10 @@ NOTICE OF TERMINATION: You are hereby relieved of the weight of all judgement ef
 NOTICE OF TERMINATION: Insincerely,
 NOTICE OF TERMINATION: The Offfice of Purgatory
 #$> DialogueDump.end("Scroll_Bake_L3")
->>>>>>> Stashed changes
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
 $> var.endingmet == true
->>>>>>> Judge/dialogue-and-narrative
 => END
 
 #TODO: trueending_letter UI/asset - purgatory seal/letterhead on corporate paper
