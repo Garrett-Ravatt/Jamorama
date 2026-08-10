@@ -37,8 +37,6 @@
 [ext_resource type="Resource" uid="uid://c7s7sh7okbjk6" path="res://Character Blocks/Treymour.tres" id="20_sn4rx"]
 [ext_resource type="AudioStream" uid="uid://p1fgaf04ok1w" path="res://audio/8_chloe_pickup_lines.wav" id="20_w0oyh"]
 [ext_resource type="Resource" uid="uid://ubsrbrc63cyo" path="res://Character Blocks/Chloe.tres" id="21_063lf"]
-[ext_resource type="Texture2D" uid="uid://bljglykpeqdnc" path="res://character_sprites/Seamore.png" id="38_ccwvk"]
-[ext_resource type="Script" uid="uid://rq3dtgotlqkd" path="res://CharacterSprite.gd" id="39_wkogs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slvn6"]
 
@@ -284,6 +282,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="CharacterManager" type="Control" parent="Node2D/CanvasLayer2/Control" unique_id=296440327 node_paths=PackedStringArray("SinList", "VirtueList", "VirtueScroll", "SinScroll")]
+unique_name_in_owner = true
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -293,11 +292,6 @@ SinList = NodePath("../SinScroll/RichTextLabel")
 VirtueList = NodePath("../VirtueScroll/RichTextLabel")
 VirtueScroll = NodePath("../VirtueScroll")
 SinScroll = NodePath("../SinScroll")
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=53215656]
-transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 1.4561377, 1, -0.961)
-texture = ExtResource("38_ccwvk")
-script = ExtResource("39_wkogs")
 
 [editable path="Node2D/CanvasLayer2/Control/MarginContainer/AngelBalloon"]
 [editable path="Node2D/CanvasLayer2/Control/MarginContainer/DevilBalloon"]
