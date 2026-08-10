@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="SoulData" format=3 uid="uid://c7s7sh7okbjk6"]
 
 [ext_resource type="Script" uid="uid://dbr2jk0a1lug5" path="res://Character Blocks/soul_data.gd" id="1_m858g"]
+[ext_resource type="Texture2D" uid="uid://baw7fq6gaarle" path="res://ui/Treymour.png" id="1_qxi6i"]
 
 [resource]
 script = ExtResource("1_m858g")
@@ -10,4 +11,5 @@ id = 3
 name = "Treymour"
 introductionStatement = "I’m sorry, I’m so sorry…"
 pickupExclimation = " Go on. Do it."
+characterTexture = ExtResource("1_qxi6i")
 metadata/_custom_type_script = "uid://dbr2jk0a1lug5"

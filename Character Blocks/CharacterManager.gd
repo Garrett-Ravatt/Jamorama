@@ -8,6 +8,7 @@ extends Node
 @export var VirtueScroll: TextureRect
 @export var SinScroll: TextureRect
 @export var Character: CharacterSprite
+@export var DragSquare: TextureRect
 
 var CurIndex = -1
 
@@ -46,8 +47,16 @@ func On():
 	SinScroll.visible = true
 	VirtueScroll.visible = true
 	Character.start(Characters[CurIndex].characterTexture)
+	DragSquare.visible = true
 
 func Off():
 	Character.reset()
 	SinScroll.visible = false
 	VirtueScroll.visible = false
+	DragSquare.visible = false
+
+func picked_up():
+	Character.isPickedUp()
+	
+func put_down():
+	Character.isPutDown()

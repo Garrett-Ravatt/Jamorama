@@ -26,6 +26,13 @@ func new_character():
 func reset_character():
 	cm.off()
 
+func pick_up():
+	cm.picked_up()
+	
+func put_down():
+	cm.put_down()
+	
+
 func play_aud(s,b = false):
 	var p := AudioStreamPlayer.new()
 		

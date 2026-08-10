@@ -37,6 +37,8 @@
 [ext_resource type="Resource" uid="uid://c7s7sh7okbjk6" path="res://Character Blocks/Treymour.tres" id="20_sn4rx"]
 [ext_resource type="AudioStream" uid="uid://p1fgaf04ok1w" path="res://audio/8_chloe_pickup_lines.wav" id="20_w0oyh"]
 [ext_resource type="Resource" uid="uid://ubsrbrc63cyo" path="res://Character Blocks/Chloe.tres" id="21_063lf"]
+[ext_resource type="Texture2D" uid="uid://bljglykpeqdnc" path="res://character_sprites/Seamore.png" id="38_ccwvk"]
+[ext_resource type="Script" uid="uid://rq3dtgotlqkd" path="res://CharacterSprite.gd" id="39_wkogs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slvn6"]
 
@@ -175,6 +177,10 @@ layout_mode = 2
 start_from_title = "intro"
 auto_start = true
 
+[node name="Balloon" parent="Node2D/CanvasLayer2/Control/MarginContainer2/PleaBalloon" index="0" unique_id=359403728]
+visible = true
+offset_bottom = -112.0
+
 [node name="TopBar" type="TextureRect" parent="Node2D/CanvasLayer2/Control" unique_id=2023750408]
 layout_mode = 1
 anchors_preset = 10
@@ -200,6 +206,7 @@ newTexture = ExtResource("10_0do2q")
 type = 1
 
 [node name="Test Drag" type="TextureRect" parent="Node2D/CanvasLayer2/Control" unique_id=2110783127]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -213,12 +220,13 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 pivot_offset = Vector2(64, 58)
 texture = ExtResource("11_bl7wp")
 script = ExtResource("12_es067")
 
 [node name="VirtueScroll" type="TextureRect" parent="Node2D/CanvasLayer2/Control" unique_id=2134525656]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -249,6 +257,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="SinScroll" type="TextureRect" parent="Node2D/CanvasLayer2/Control" unique_id=1626650240]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -281,7 +290,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="CharacterManager" type="Control" parent="Node2D/CanvasLayer2/Control" unique_id=296440327 node_paths=PackedStringArray("SinList", "VirtueList", "VirtueScroll", "SinScroll")]
+[node name="CharacterManager" type="Control" parent="Node2D/CanvasLayer2/Control" unique_id=296440327 node_paths=PackedStringArray("SinList", "VirtueList", "VirtueScroll", "SinScroll", "Character", "DragSquare")]
 unique_name_in_owner = true
 anchors_preset = 0
 offset_right = 40.0
@@ -292,6 +301,13 @@ SinList = NodePath("../SinScroll/RichTextLabel")
 VirtueList = NodePath("../VirtueScroll/RichTextLabel")
 VirtueScroll = NodePath("../VirtueScroll")
 SinScroll = NodePath("../SinScroll")
+Character = NodePath("../../../../Sprite3D")
+DragSquare = NodePath("../Test Drag")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=948699257]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 1.5855867, 0.9077355, -0.3442337)
+texture = ExtResource("38_ccwvk")
+script = ExtResource("39_wkogs")
 
 [editable path="Node2D/CanvasLayer2/Control/MarginContainer/AngelBalloon"]
 [editable path="Node2D/CanvasLayer2/Control/MarginContainer/DevilBalloon"]

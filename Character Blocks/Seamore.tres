@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="SoulData" format=3 uid="uid://djwfukl2vowlu"]
 
+[ext_resource type="Texture2D" uid="uid://dp5lg0cjnaaks" path="res://ui/Seamore.png" id="1_w1j4g"]
 [ext_resource type="Script" uid="uid://dbr2jk0a1lug5" path="res://Character Blocks/soul_data.gd" id="1_yh5wp"]
 
 [resource]
@@ -9,4 +10,5 @@ virtues = Array[String](["Best Accountant in San Diego 2014 - 2019."])
 name = "Seamore"
 introductionStatement = "I’m just a little guy."
 pickupExclimation = "*quivering*"
+characterTexture = ExtResource("1_w1j4g")
 metadata/_custom_type_script = "uid://dbr2jk0a1lug5"
