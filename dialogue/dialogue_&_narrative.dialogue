@@ -67,11 +67,8 @@ $> DialogueDump.db.start(null, "tutorial_demon_4")
 $> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: They can't hear us.
 $> DialogueDump.stop_aud("res://audio/devil_talking.wav")
-$> DialogueDump.pb.hide()
 $> DialogueDump.pb.start(null, "seamore")
 => END
-
-=> seamore
 
 ~ seamore
 
@@ -127,10 +124,10 @@ $> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: The new guy has a sense of humor.
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.pb.start(null, "robinson")
-$> DialogueDump.db.hide()
+#$> DialogueDump.db.hide()
 => END
 
-=> robinson
+#=> robinson
 
 ~ seamorehell_demon_1
 $> DialogueDump.play_aud("res://audio/demon_talking.wav")
@@ -144,11 +141,9 @@ $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: That was a wise decision.
 ANGEL: Keep up the good work. :)
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
-$> DialogueDump.ab.hide()
+#$> DialogueDump.ab.hide()
 $> DialogueDump.pb.start(null, "robinson")
 => END
-
-=> robinson
 
 ~ robinson
 $> DialogueDump.new_character()
@@ -170,9 +165,8 @@ $> DialogueDump.pb.hide()
 	$> DialogueDump.angelending += 1
 	$> DialogueDump.ab.start(null, "robinsonhell_angel_1")
 	=> END
-	
-~ robinsonheaven_angel_1
 
+~ robinsonheaven_angel_1
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Even with...
 ANGEL: Very well. 
@@ -184,30 +178,26 @@ $> DialogueDump.db.start(null,"robinsonheaven_demon_1")
 ~ robinsonheaven_demon_1
 $> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: Aww, I had a lovely cauldron of oil for him.
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
-$> DialogueDump.db.hide()
-$> DialogueDump.pb.play(null,"angela")
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
+#$> DialogueDump.db.hide()
+$> DialogueDump.pb.start(null,"angela")
 => END
-
-=> angela
 
 ~ robinsonhell_angel_1
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Nicely done.
 $> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.start(null,"robinsonhell_demon_1")
-$> DialogueDump.ab.hide()
+#$> DialogueDump.ab.hide()
 => END
 
 ~ robinsonhell_demon_1
 $> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: Wonderful.
 $> DialogueDump.stop_aud("res://audio/demon_talking.wav")
-$> DialogueDump.pb.play(null,"angela")
-$> DialogueDump.db.hide()
+$> DialogueDump.pb.start(null,"angela")
+#$> DialogueDump.db.hide()
 => END
-
-=> angela
 
 ~ angela
 $> DialogueDump.new_character()
@@ -221,14 +211,14 @@ $> DialogueDump.pb.hide()
 
 - Drag to Heaven
 	# MAYBE angel dialogue
-	$> DialogueDump.truending += 1
+	$> DialogueDump.trueending += 1
 	$> DialogueDump.demonending +=1
 	$> DialogueDump.ab.start(null,"angelaheaven_angel_1")
 	=> END
 - Drag to Hell
 	# MAYBE devil dialogue
 	$> DialogueDump.angelending += 1
-	$> DialogueDump.db.start(null,"angelaheaven_demon_1")
+	$> DialogueDump.db.start(null,"angelahell_demon_1")
 	=> END
 	
 ~ angelaheaven_angel_1
@@ -237,28 +227,25 @@ ANGEL: Really?
 ANGEL: Who was she to decide who lives and who dies? 
 ANGEL: You need to think harder about these things...
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
-$> DialogueDump.pb.play(null,"treymour")
-$> DialogueDump.ab.hide()
+$> DialogueDump.pb.start(null,"treymour")
 => END
-=> treymour
 	
-~ angelhell_demon_1
+~ angelahell_demon_1
 $> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: Everybody thinks I prefer to torment bad [#italicize 'bad'] people.
 DEMON: But that's hardly true.
 DEMON: What I mean to say is...
 DEMON: You're good at this.
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
-$> DialogueDump.pb.play(null,"treymour")
-$> DialogueDump.db.hide()
+$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
+$> DialogueDump.pb.start(null,"treymour")
 => END
-=> treymour
 	
 ~ treymour
 $> DialogueDump.new_character()
 TREYMOUR: I'm sorry, I'm so sorry...
 TREYMOUR: ... Oh, God... God, forgive me...
 TREYMOUR: ...
+$> DialogueDump.pb.hide()
 
 # TODO: ANGEL UI - VIRTUE - Forgave his father for disowning him.
 # TODO: DEMON UI - SIN - Murdered his sister.
@@ -299,10 +286,10 @@ ANGEL: Think about the people already in Heaven.
 ANGEL: A little mercy is good, but too much... 
 ANGEL: I don't want to report you to management, but I will.
 $> DialogueDump.stop_aud("res://audio/demon_talking.wav")
-$> DialogueDump.pb.play(null,"chloe")
+$> DialogueDump.pb.start(null,"chloe")
 => END
 	
-=> chloe
+#=> chloe
 	
 ~ treymourhell_demon_1
 $> DialogueDump.play_aud("res://audio/demon_talking.wav")
@@ -313,12 +300,9 @@ $> DialogueDump.ab.start(null,"treymourhell_angel_1")
 
 ~ treymourhell_angel_1
 ANGEL: ...
-$> DialogueDump.db.start(null,"chloe")
-$> DialogueDump.ab.hide()
+$> DialogueDump.pb.start(null,"chloe")
 => END
 
-=> chloe
-	
 ~ chloe
 $> DialogueDump.new_character()
 $> DialogueDump.play_aud("res://audio/7_chloe_intro_lines.wav")
@@ -352,10 +336,9 @@ if DialogueDump.angelending >= 5
 	$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 	ANGEL: There are few people who can put their personal feelings aside.
 	ANGEL: And make the right decision.
-	$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 	ANGEL: You made the right decision five times in a row.
 	ANGEL: I'm so proud of you.
-	$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
+	$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 	$> DialogueDump.db.start(null,"chloeheaven_demon_1")
 	=> END
 	
@@ -365,14 +348,12 @@ if DialogueDump.angelending >= 5
 	$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 	DEMON: It's the only [#italicize 'only'] right decision you made all day.
 	=> END
-	=> angelending
 
 else DialogueDump.angelending <= 4
 	$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 	ANGEL: I know these decisions may feel unfair... 
 	ANGEL: But are times when mercy is fairer because it's random.
 	$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
-	
 	=> endingchecks
 
 ~ chloehell_angel_1
@@ -394,11 +375,11 @@ $> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 if DialogueDump.demonending == 5
 	$> DialogueDump.db.start(null,"demonending_angel_1")
 	=> END
-	=> demonending_angel_1
+#	=> demonending_angel_1
 else 
 	if DialogueDump.trueending == 5
-		$> DialogueDump.db.hide()
-		$> DialogueDump.ab.hide()
+#		$> DialogueDump.db.hide()
+#		$> DialogueDump.ab.hide()
 		=> trueending
 	else 
 		$> DialogueDump.ab.start(null,"purgatoryending_angel_1")
