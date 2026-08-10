@@ -81,6 +81,7 @@ $> DialogueDump.play_aud("res://audio/1_seamore_intro_line.wav")
 SEAMORE: I'm just a little guy.
 $> DialogueDump.stop_aud("res://audio/1_seamore_intro_line.wav")
 $> DialogueDump.pb.hide()
+$> DialogueDump.turn_on()
 
 
 # TODO: ANGEL UI - VIRTUE - Best Accountant in San Diego 2014 - 2019.
@@ -152,6 +153,7 @@ ROBINSON: God-damned, no-good surgeons…
 $> DialogueDump.play_aud("res://audio/3_robinson_intro_lines.wav")
 ROBINSON: Well, there's no point in delaying it now.
 $> DialogueDump.pb.hide()
+$> DialogueDump.turn_on()
 
 # TODO: ANGEL UI - VIRTUE - Always returned the shopping cart. 
 # TODO: DEMON UI - SIN - Disowned his children.
@@ -205,6 +207,7 @@ $> DialogueDump.new_character()
 ANGELA: E-E-Excuse me?
 ANGELA: Is i-it too much to ask you to put me with m-my brother?
 $> DialogueDump.pb.hide()
+$> DialogueDump.turn_on()
 
 # TODO: ANGEL UI - VIRTUE - Adopted eight stray cats.
 # TODO: DEMON UI - SIN - Pulled the plug on her brother.
@@ -247,6 +250,7 @@ TREYMOUR: I'm sorry, I'm so sorry...
 TREYMOUR: ... Oh, God... God, forgive me...
 TREYMOUR: ...
 $> DialogueDump.pb.hide()
+$> DialogueDump.turn_on()
 
 # TODO: ANGEL UI - VIRTUE - Forgave his father for disowning him.
 # TODO: DEMON UI - SIN - Murdered his sister.
@@ -310,6 +314,7 @@ $> DialogueDump.play_aud("res://audio/7_chloe_intro_lines.wav")
 CHLOE: I was murdered.
 CHLOE: So, yeah, you know what to do.
 $> DialogueDump.pb.hide()
+$> DialogueDump.turn_on()
 
 # TODO: ANGEL UI - VIRTUE - Was a Red Cross doctor.
 # TODO: DEMON UI - SIN - Framed her brother for $900,000 in tax fraud.
