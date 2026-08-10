@@ -43,12 +43,14 @@ $> DialogueDump.ab.start(null, "tutorial_angel_2")
 ~ tutorial_angel_2
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: If that seems like a big responsibility...
-> DialogueDump.stop_aud("res://audio/angel_talking.wav")
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null, "tutorial_demon_3")
 => END
 
 ~ tutorial_demon_3
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: It is!
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.ab.start(null, "tutorial_angel_3")
 => END
 
