@@ -401,10 +401,14 @@ else
 		=> purgatoryending_angel_1
 
 ~ angelending
+<<<<<<< HEAD
+$> DialogueDump.end() == true
+=======
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
 $> var.endingmet == true
+>>>>>>> Judge/dialogue-and-narrative
 => END
 # TODO: angelending_letter UI/asset - angelic seal/letterhead on corporate paper
 # Offer of Ascension
@@ -433,10 +437,14 @@ DEMON: I'll put in a word for you --
 DEMON: Downstairs. 
 $> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.hide()
+<<<<<<< HEAD
+$> DialogueDump.end() == true
+=======
 $> var.endingmet == true
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
+>>>>>>> Judge/dialogue-and-narrative
 => END
  
 # TODO: demonending_letter UI/asset - angelic seal/letterhead on corporate paper
@@ -462,10 +470,14 @@ DEMON: Some good decisions, some bad decisions.
 DEMON: And isn't that a kind balance in itself?
 $> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.hide()
+<<<<<<< HEAD
+$> DialogueDump.end() == true
+=======
 $> var.endingmet == true
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
+>>>>>>> Judge/dialogue-and-narrative
 => END
 	
 # TODO: purgatoryending_letter UI/asset - purgatory seal/symbol/lettehead
@@ -479,10 +491,14 @@ $> DialogueDump.demonending == 0
 # The Office of Purgatory
 
 ~ trueending
+<<<<<<< HEAD
+$> DialogueDump.end() == true
+=======
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
 $> var.endingmet == true
+>>>>>>> Judge/dialogue-and-narrative
 => END
 #TODO: trueending_letter UI/asset - purgatory seal/letterhead on corporate paper
 # Notice of Termination
