@@ -5,10 +5,10 @@
 # Each line should fade in one by one. Let the player sit with each sentence. Then, fade them all to black.
 $> wait(0.1)
 $> DialogueDump.play_aud("res://audio/soundtrack.wav")
-INTROTEXT: Hear us, lord of scales,
-INTROTEXT: We must empty Purgatory with our prayers
-INTROTEXT: and tired hearts.
-# 
+: "Hear us, lord of scales,
+: we must empty Purgatory with our prayers
+: and tired our hearts."
+$> DialogueDump.db.start(null, "tutorial_demon_1")
 => tutorial_demon_1
 # Load into the main environment of the game -- the desk in front of the wasteland of purgatory.
 # TODO: Text progresses as you click it.
@@ -16,7 +16,7 @@ INTROTEXT: and tired hearts.
 # TODO: Add in speaking sound effect for both Angel and Devil.
 ~ tutorial_demon_1
 $> DialogueDump.play_aud("res://audio/devil_talking.wav")
-DEMON: First day on the job? [next=auto]
+DEMON: First day on the job?
 DEMON: Heh, you're toast.
 $> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.ab.start(null, "tutorial_angel_1")
@@ -59,30 +59,32 @@ $> DialogueDump.ab.start(null, "tutorial_angel_3")
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: But, like, no pressure.
 ANGEL: :)
-ANGEL: Oh, and by the way, if you ever need council on your decisions...
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null, "tutorial_demon_4")
 => END
 
 ~ tutorial_demon_4
 $> DialogueDump.play_aud("res://audio/devil_talking.wav")
+DEMON: And if you're worried about the riff raff hearing our chit chat... 
 DEMON: They can't hear us.
+DEMON: >:)
 $> DialogueDump.stop_aud("res://audio/devil_talking.wav")
+$> DialogueDump.pb.hide()
 $> DialogueDump.pb.start(null, "seamore")
 => END
+
+=> seamore
 
 ~ seamore
 
 # Seamore could stand to look really pitiful
 # He walks up/fades in.
-$> DialogueDump.new_character()
+
 SEAMORE: ...
 $> DialogueDump.play_aud("res://audio/1_seamore_intro_line.wav")
 SEAMORE: I'm just a little guy.
 $> DialogueDump.stop_aud("res://audio/1_seamore_intro_line.wav")
 $> DialogueDump.pb.hide()
-$> DialogueDump.turn_on()
-
 
 # TODO: ANGEL UI - VIRTUE - Best Accountant in San Diego 2014 - 2019.
 # TODO: DEMON UI - SIN - Did somebody's taxes "wrong" in 2020.
@@ -107,7 +109,7 @@ $> DialogueDump.db.start(null, "seamoreheaven_demon_1")
 => END
 
 ~ seamoreheaven_demon_1
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Heheheh.
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.ab.start(null, "seamoreheaven_angel_2")
@@ -122,19 +124,19 @@ $> DialogueDump.db.start(null, "seamoreheaven_demon_2")
 => END
 
 ~ seamoreheaven_demon_2
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: The new guy has a sense of humor.
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.pb.start(null, "robinson")
-#$> DialogueDump.db.hide()
+$> DialogueDump.db.hide()
 => END
 
-#=> robinson
+=> robinson
 
 ~ seamorehell_demon_1
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: I can't wait to torture that guy!
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.ab.start(null, "seamorehell_angel_1")
 => END
 
@@ -142,25 +144,25 @@ $> DialogueDump.ab.start(null, "seamorehell_angel_1")
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: That was a wise decision.
 ANGEL: Keep up the good work. :)
-$> DialogueDump.play_aud("res://audio/angel_talking.wav")
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 #$> DialogueDump.ab.hide()
 $> DialogueDump.pb.start(null, "robinson")
 => END
 
+=> robinson
+
 ~ robinson
-$> DialogueDump.new_character()
 ROBINSON: God-damned, no-good surgeons…
 $> DialogueDump.play_aud("res://audio/3_robinson_intro_lines.wav")
 ROBINSON: Well, there's no point in delaying it now.
 $> DialogueDump.pb.hide()
-$> DialogueDump.turn_on()
 
 # TODO: ANGEL UI - VIRTUE - Always returned the shopping cart. 
 # TODO: DEMON UI - SIN - Disowned his children.
 # TODO: Upon pickup, triggers only once: UI ROBINSON PICKUP EXCLAMATION - Oh, just get it over with!
 
 - Drag to Heaven
-	$> DialogueDump.demonending +=1
+	$> DialogueDump.demonending += 1
 	$> DialogueDump.trueending += 1
 	$> DialogueDump.ab.start(null, "robinsonheaven_angel_1")
 	=> END
@@ -168,8 +170,9 @@ $> DialogueDump.turn_on()
 	$> DialogueDump.angelending += 1
 	$> DialogueDump.ab.start(null, "robinsonhell_angel_1")
 	=> END
-
+	
 ~ robinsonheaven_angel_1
+
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Even with...
 ANGEL: Very well. 
@@ -179,35 +182,41 @@ $> DialogueDump.db.start(null,"robinsonheaven_demon_1")
 => END
 
 ~ robinsonheaven_demon_1
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Aww, I had a lovely cauldron of oil for him.
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 #$> DialogueDump.db.hide()
 $> DialogueDump.pb.start(null,"angela")
 => END
+
+=> angela
 
 ~ robinsonhell_angel_1
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Nicely done.
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.db.start(null,"robinsonhell_demon_1")
-#$> DialogueDump.ab.hide()
+$> DialogueDump.ab.hide()
 => END
 
 ~ robinsonhell_demon_1
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Wonderful.
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.pb.start(null,"angela")
 #$> DialogueDump.db.hide()
 => END
 
+=> angela
+
 ~ angela
 $> DialogueDump.new_character()
+$> DialogueDump.play_aud("res://audio/5_angela_intro_lines.wav")
 ANGELA: E-E-Excuse me?
 ANGELA: Is i-it too much to ask you to put me with m-my brother?
+ANGELA: Whereever he is...
+$> DialogueDump.stop_aud("res://audio/5_angela_intro_lines.wav")
 $> DialogueDump.pb.hide()
-$> DialogueDump.turn_on()
 
 # TODO: ANGEL UI - VIRTUE - Adopted eight stray cats.
 # TODO: DEMON UI - SIN - Pulled the plug on her brother.
@@ -215,14 +224,14 @@ $> DialogueDump.turn_on()
 
 - Drag to Heaven
 	# MAYBE angel dialogue
-	$> DialogueDump.trueending += 1
+	$> DialogueDump.truending += 1
 	$> DialogueDump.demonending +=1
 	$> DialogueDump.ab.start(null,"angelaheaven_angel_1")
 	=> END
 - Drag to Hell
 	# MAYBE devil dialogue
 	$> DialogueDump.angelending += 1
-	$> DialogueDump.db.start(null,"angelahell_demon_1")
+	$> DialogueDump.db.start(null,"angelaheaven_demon_1")
 	=> END
 	
 ~ angelaheaven_angel_1
@@ -231,26 +240,40 @@ ANGEL: Really?
 ANGEL: Who was she to decide who lives and who dies? 
 ANGEL: You need to think harder about these things...
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
-$> DialogueDump.pb.start(null,"treymour")
+$> DialogueDump.pb.play(null,"treymour")
+$> DialogueDump.ab.hide()
 => END
+=> treymour
 	
-~ angelahell_demon_1
+<<<<<<< Updated upstream
+~ angelhell_demon_1
 $> DialogueDump.play_aud("res://audio/demon_talking.wav")
 DEMON: Everybody thinks I prefer to torment bad [#italicize 'bad'] people.
 DEMON: But that's hardly true.
 DEMON: What I mean to say is...
 DEMON: You're good at this.
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
+$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+$> DialogueDump.pb.play(null,"treymour")
+$> DialogueDump.db.hide()
+=======
+~ angelahell_demon_1
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
+DEMON: Everybody thinks I prefer to torment bad [#italicize 'bad'] people.
+DEMON: But that's hardly true.
+DEMON: What I mean to say is...
+DEMON: Misplacements are more fun.
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.pb.start(null,"treymour")
 => END
+=> treymour
 	
 ~ treymour
 $> DialogueDump.new_character()
+$> DialogueDump.play_aud("res://audio/6_treymour_intro_lines.wav")
 TREYMOUR: I'm sorry, I'm so sorry...
 TREYMOUR: ... Oh, God... God, forgive me...
+$> DialogueDump.stop_aud("res://audio/6_treymour_intro_lines.wav")
 TREYMOUR: ...
-$> DialogueDump.pb.hide()
-$> DialogueDump.turn_on()
 
 # TODO: ANGEL UI - VIRTUE - Forgave his father for disowning him.
 # TODO: DEMON UI - SIN - Murdered his sister.
@@ -273,48 +296,55 @@ $> DialogueDump.turn_on()
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: A murderer?! In Heaven?!
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
-
-$> DialogueDump.db.start(null,"treymourhell_demon_1")
+$> DialogueDump.db.start(null,"treymourheaven_demon_1")
 => END
 
 ~ treymourheaven_demon_1
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: HAHAHA. AMAZING.
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
-$> DialogueDump.ab.start(null,"treymourhell_angel_2")
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
+$> DialogueDump.ab.start(null,"treymourheaven_angel_2")
 => END
 
 ~ treymourheaven_angel_2
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: It's not just about the people here.  
 ANGEL: Think about the people already in Heaven.
-ANGEL: A little mercy is good, but too much... 
 ANGEL: I don't want to report you to management, but I will.
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
+ANGEL: Speaking of management...
+ANGEL: They want you to send the next one upstairs right away.
+ANGEL: Do that and maybe you'll keep your job.
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.pb.start(null,"chloe")
 => END
 	
-#=> chloe
+=> chloe
 	
 ~ treymourhell_demon_1
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Mm, what delectable guilt.
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
 $> DialogueDump.ab.start(null,"treymourhell_angel_1")
 => END
 
 ~ treymourhell_angel_1
-ANGEL: ...
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
+ANGEL: Oh, I just got word from management.
+ANGEL: Don't worry about this next one.
+ANGEL: Send her upstairs right away.
+ANGEL: I'm sure you understand.
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.pb.start(null,"chloe")
 => END
 
+=> chloe
+	
 ~ chloe
-$> DialogueDump.new_character()
+
 $> DialogueDump.play_aud("res://audio/7_chloe_intro_lines.wav")
 CHLOE: I was murdered.
 CHLOE: So, yeah, you know what to do.
 $> DialogueDump.pb.hide()
-$> DialogueDump.turn_on()
 
 # TODO: ANGEL UI - VIRTUE - Was a Red Cross doctor.
 # TODO: DEMON UI - SIN - Framed her brother for $900,000 in tax fraud.
@@ -327,6 +357,7 @@ $> DialogueDump.turn_on()
 - Drag to Heaven
 	# MAYBE angel popup dialogue
 	$> DialogueDump.angelending += 1
+	$> DialogueDump.demonending += 1
 	$> DialogueDump.ab.start(null,"chloeheaven_angel_0")
 	=> END
 - Drag to Hell 
@@ -342,61 +373,81 @@ if DialogueDump.angelending >= 5
 	$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 	ANGEL: There are few people who can put their personal feelings aside.
 	ANGEL: And make the right decision.
+	$> DialogueDump.play_aud("res://audio/angel_talking.wav")
 	ANGEL: You made the right decision five times in a row.
 	ANGEL: I'm so proud of you.
-	$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
+	$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 	$> DialogueDump.db.start(null,"chloeheaven_demon_1")
 	=> END
 	
 	~ chloeheaven_demon_1
-	$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+	$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 	DEMON: In fact... even I can admit...
-	$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 	DEMON: It's the only [#italicize 'only'] right decision you made all day.
+	$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
+	$> DialogueDump.pb.start(null,"angelending")
 	=> END
+	=> angelending
 
-else DialogueDump.angelending <= 4
+else
+	~ unfair_angel_1
 	$> DialogueDump.play_aud("res://audio/angel_talking.wav")
+	ANGEL: I know that was hard.
 	ANGEL: I know these decisions may feel unfair... 
-	ANGEL: But are times when mercy is fairer because it's random.
+	ANGEL: But there are times when mercy is fairer because it's random.
 	$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
-	=> endingchecks
+	$> DialogueDump.db.start(null,"unfair_demon_1")
+	#$> DialogueDump.db.start(null,"endingchecks")
+	=> END
+	
+	~ unfair_demon_1
+	$> DialogueDump.play_aud("res://audio/devil_talking.wav")
+	DEMON: Like winning the lottery! HAHAHA! 
+	$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
+	$> DialogueDump.ab.start(null,"demonending_angel_1")
+	=> END
+	
+	#=> endingchecks
 
 ~ chloehell_angel_1
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
 ANGEL: Do you have no heart?
 ANGEL: Haven't you sent enough people to the pit today?
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
-$> DialogueDump.db.start(null,"chloehell_demon_1")
-=> END
-
-~ chloehell_demon_1
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
-DEMON: Don't listen to them.
-DEMON: I think you sent that girl exactly where she needs to be.
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 => endingchecks
 
 ~ endingchecks
 if DialogueDump.demonending == 5
 	$> DialogueDump.db.start(null,"demonending_angel_1")
 	=> END
-#	=> demonending_angel_1
+	=> demonending_angel_1
 else 
 	if DialogueDump.trueending == 5
-		$> DialogueDump.db.hide()
-		$> DialogueDump.ab.hide()
-		=> trueending
+		$> DialogueDump.db.start(null,"trueending_demon_1")
+		=> END
 	else 
-		$> DialogueDump.ab.start(null,"purgatoryending_angel_1")
-		=> purgatoryending_angel_1
+		#$> DialogueDump.ab.start(null,"purgatoryending_angel")
+		#=> END
+		=> purgatoryending_angel
 
 ~ angelending
-$> DialogueDump.end("Scroll_Bake_L3")
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
 $> var.endingmet == true
+#$> DialogueDump.end("Scroll_Bake_L2")
+$> DialogueDump.angelending == 0
+$> DialogueDump.trueending == 0
+$> DialogueDump.demonending == 0
+OFFER OF ASCENSION: Most know that Heaven is not for everyone.
+OFFER OF ASCENSION: Few understand it's not for nearly anyone.
+OFFER OF ASCENSION: By delivering all Heavenly candidates to Hell -- except for those explicitly instructed -- 
+OFFER OF ASCENSION: You've demonstrated a deep understanding of the difficult nature of Heaven. 
+OFFER OF ASCENSION: We would therefore like to offer you the position of Junior Angel - Choir II. 
+OFFER OF ASCENSION: Congratulations.
+OFFER OF ASCENSION: We look forward to your response.
+OFFER OF ASCENSION: Sincerely,
+OFFER OF ASCENSION: The Department of Heavenly Affairs
 => END
 # TODO: angelending_letter UI/asset - angelic seal/letterhead on corporate paper
 # Offer of Ascension
@@ -410,22 +461,33 @@ $> var.endingmet == true
 
 ~ demonending_angel_1
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
-ANGEL: I'm happy you could make the right decision. 
-ANGEL: But I'm afraid you made it too late.
+ANGEL: Although I'm happy you could make the right decision...
+ANGEL: I'm afraid you made it too late.
 ANGEL: [# betrayed] I've already... I've already lodged a complaint with management. [#melodramatic sniffle] 
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null,"demonending_demon_1")
 => END
 
 ~ demonending_demon_1
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Don't listen to goody-goody.
 DEMON: So what if you lose your job here?
-DEMON: I'll put in a word for you --
-DEMON: Downstairs. 
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
-$> DialogueDump.db.hide()
-$> DialogueDump.end("Scroll_Bake_L1")
+DEMON: I'll put in a word for you. Downstairs. 
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
+$> DialogueDump.pb.start(null,"demonending_offer")
+=> END
+
+~ demonending_offer
+OFFER OF INIQUITY: It came to our attention  your position in the Office of Purgatory was recently terminated, 
+OFFER OF INIQUITY: due to a rebellion among certain recent entrees into Heaven. 
+OFFER OF INIQUITY: The only thing funnier than sending good people to Hell...
+OFFER OF INIQUITY: ...is sending bad people to Heaven.
+OFFER OF INIQUITY: You understand the nature of discord.
+OFFER OF INQUITY: We therefore offer you the position of Baron of Hell. 
+OFFER OF INIQUITY: We look forward to seeing you among our ranks. 
+OFFER OF INIQUITY: Deliciously,
+OFFER OF INIQUITY: The Directorate of Hell
+#$> DialogueDump.end("Scroll_Bake_L1")
 $> var.endingmet == true
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
@@ -436,26 +498,39 @@ $> DialogueDump.demonending == 0
 # Offer of Inequity 
 # It came to our attention that your position as Purgatory Officer was recently terminated, due to a rebellion among the recent entrees into Heaven. 
 # Their loss. Far more delicious than sending bad people to Hell is sending bad people to Heaven. 
-# You understand the nature of discord; and we therefor offer you the position of Baron of Hell. 
+# You understand the nature of discord; and we therefore offer you the position of Baron of Hell. 
 # We look forward to seeing you among our ranks. 
 
 # Deliciously,
 # The Directorate of Hell
 
-~ purgatoryending_angel_1
+~ purgatoryending_angel
 $> DialogueDump.play_aud("res://audio/angel_talking.wav")
-ANGEL: Well, I guess I can't complain.
+ANGEL: *sigh*
+ANGEL: I guess I can't really complain.
+ANGEL: You loosely did what I thought you should.
 $> DialogueDump.stop_aud("res://audio/angel_talking.wav")
 $> DialogueDump.db.start(null,"purgatoryending_demon_1")
 => END
 
 ~ purgatoryending_demon_1
-$> DialogueDump.play_aud("res://audio/demon_talking.wav")
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
 DEMON: Some good decisions, some bad decisions.
 DEMON: And isn't that a kind balance in itself?
-$> DialogueDump.stop_aud("res://audio/demon_talking.wav")
-$> DialogueDump.db.hide()
-$> DialogueDump.end("Scroll_Bake_L2")
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
+$> DialogueDump.pb.start(null,"purgatoryending_notice")
+#$> DialogueDump.db.hide()
+#$> DialogueDump.end("Scroll_Bake_L2")
+=> END
+
+~ purgatoryending_notice
+RECOGNITION OF STANDING SERVICE: The Office of Purgatory would like to recognize your performance.
+RECOGNITION OF STANDING SERVICE: Both heavenly and infernal departments noted your ability to maintain the illusion of choice...
+RECOGNITION OF STANDING SERVICE: ...while still enforcing the status quo.
+RECOGNITION OF STANDING SERVICE: You understand balance needs no progress.
+RECOGNITION OF STANDING SERVICE: Keep up the mediocre work.
+RECOGNITION OF STANDING SERVICE: Lukewarmly,
+RECOGNITION OF STANDING SERVICE: The Office of Purgatory
 $> var.endingmet == true
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
@@ -472,13 +547,42 @@ $> DialogueDump.demonending == 0
 # Lukewarmly, 
 # The Office of Purgatory
 
-~ trueending
-$> DialogueDump.end("Scroll_Bake_L3")
+~ trueending_demon_1
+$> DialogueDump.play_aud("res://audio/devil_talking.wav")
+DEMON: Not even close!
+DEMON: They sent all the WRONG people to Hell!
+DEMON: Bad people to Hell, good people to Heaven...
+DEMON: I want it the other way around!
+$> DialogueDump.stop_aud("res://audio/devil_talking.wav")
+$> DialogueDump.ab.start(null,"trueending_angel_1")
+=> END
+
+~ trueending_angel_1
+$> DialogueDump.play_aud("res://audio/angel_talking.wav")
+ANGEL: Well, I hate to agree with him...
+ANGEL: But you really did send the wrong people to Heaven.
+ANGEL: There are some lines, no matter the reason...
+ANGEL: ...you simply do not cross. 
+$> DialogueDump.stop_aud("res://audio/angel_talking.wav")
+$> DialogueDump.pb.start(null,"trueending_termination")
+=> END
+
+~ trueending_termination
+NOTICE OF TERMINATION: This letter confirms that your employment with the Office of Purgatory is officially terminated.
+NOTICE OF TERMINATION: After multiple warnings, both angelic and infernal departments...
+NOTICE OF TERMINATION: ...complained their Purgatory Officer was "uncooperative and inadvisable."
+NOTICE OF TERMINATION: This is not a condemnation of you personally,
+NOTICE OF TERMINATION: but your personal morality aligns with neither Heaven or Hell and for that reason -- 
+NOTICE OF TERMINATION: You are hereby relieved of the weight of all judgement effective immediately.
+NOTICE OF TERMINATION: Insincerely,
+NOTICE OF TERMINATION: The Offfice of Purgatory
+#$> DialogueDump.end("Scroll_Bake_L3")
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
 $> var.endingmet == true
 => END
+
 #TODO: trueending_letter UI/asset - purgatory seal/letterhead on corporate paper
 # Notice of Termination
 # This letter confirms that your employment with the Office of Purgatory is terminated effective immediately.
