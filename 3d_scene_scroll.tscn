@@ -32,8 +32,8 @@ albedo_color = Color(0.8865831, 0.8755477, 0.9723796, 1)
 [node name="3DScene_Angela" type="Node3D" unique_id=351432302]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1729677590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97422314, 1.8360779)
-fov = 16.7
+transform = Transform3D(1, 0, 0, 0, 0.5296186, 0.84823596, 0, -0.84823596, 0.5296186, 0, 1.5542668, 0.47904202)
+fov = 26.2
 far = 47.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=249343718]
@@ -78,13 +78,17 @@ transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.2836635, 0.775, -0
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.27873337, 1.2080669, -0.068552)
 
 [node name="Scroll_Bake_L1" parent="." unique_id=1872881443 instance=ExtResource("5_h61xp")]
+unique_name_in_owner = true
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -2.2352557, 0.25749624, 0.8232547)
 
 [node name="Scroll_Bake_L2" parent="." unique_id=1038883932 instance=ExtResource("6_8ctao")]
+unique_name_in_owner = true
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -2.6024187, 0.25749624, 0.8232547)
 
 [node name="Scroll_Bake_L3" parent="." unique_id=559701464 instance=ExtResource("7_5n8vo")]
+unique_name_in_owner = true
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -3.00024, 0.25749624, 0.8232547)
 
 [node name="Scroll_Bake_L4" parent="." unique_id=1047330641 instance=ExtResource("8_kjx2f")]
+unique_name_in_owner = true
 transform = Transform3D(-2.6226834e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.6226834e-08, -3.3742142, 0.25749624, 0.8232547)

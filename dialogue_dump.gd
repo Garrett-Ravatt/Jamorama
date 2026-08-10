@@ -17,7 +17,9 @@ var db : FreeBalloon
 
 var cm: CharacterManager
 
-func end():
+func end(s : String):
+	get_tree().change_scene_to_file("res://3d_scene_scroll.tscn")
+	get_node("%"+s).show()
 	pass
 
 func new_character():
