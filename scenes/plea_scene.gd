@@ -11,6 +11,7 @@ func _ready() -> void:
 	DialogueDump.ab = %AngelBalloon
 	DialogueDump.pb = %PleaBalloon
 	DialogueDump.db = %DevilBalloon
+	DialogueDump.cm = %CharacterManager
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

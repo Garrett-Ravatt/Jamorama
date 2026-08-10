@@ -1,9 +1,13 @@
+class_name CharacterManager
 extends Node
 
 @export var CurrentCharacter: SoulData
 @export var Characters: Array[SoulData] = []
 @export var SinList: RichTextLabel
 @export var VirtueList: RichTextLabel
+@export var VirtueScroll: TextureRect
+@export var SinScroll: TextureRect
+@export var Character: CharacterSprite
 
 var CurIndex = 0
 
@@ -36,3 +40,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func On():
+	SinScroll.visible = true
+	VirtueScroll.visible = true
+	Character.start()
+
+func Off():
+	Character.reset()
+	SinScroll.visible = false
+	VirtueScroll.visible = false
