@@ -178,7 +178,6 @@ start_from_title = "intro"
 auto_start = true
 
 [node name="Balloon" parent="Node2D/CanvasLayer2/Control/MarginContainer2/PleaBalloon" index="0" unique_id=359403728]
-visible = true
 offset_bottom = -112.0
 
 [node name="TopBar" type="TextureRect" parent="Node2D/CanvasLayer2/Control" unique_id=2023750408]

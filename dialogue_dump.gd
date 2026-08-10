@@ -24,7 +24,7 @@ func new_character():
 	cm.next_character()
 	
 func reset_character():
-	cm.off()
+	cm.Off()
 
 func pick_up():
 	cm.picked_up()

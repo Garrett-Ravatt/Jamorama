@@ -151,6 +151,7 @@ $> DialogueDump.pb.start(null, "robinson")
 => robinson
 
 ~ robinson
+$> DialogueDump.new_character()
 ROBINSON: God-damned, no-good surgeons…
 $> DialogueDump.play_aud("res://audio/3_robinson_intro_lines.wav")
 ROBINSON: Well, there's no point in delaying it now.
@@ -209,6 +210,7 @@ $> DialogueDump.db.hide()
 => angela
 
 ~ angela
+$> DialogueDump.new_character()
 ANGELA: E-E-Excuse me?
 ANGELA: Is i-it too much to ask you to put me with m-my brother?
 $> DialogueDump.pb.hide()
@@ -253,6 +255,7 @@ $> DialogueDump.db.hide()
 => treymour
 	
 ~ treymour
+$> DialogueDump.new_character()
 TREYMOUR: I'm sorry, I'm so sorry...
 TREYMOUR: ... Oh, God... God, forgive me...
 TREYMOUR: ...
@@ -317,7 +320,7 @@ $> DialogueDump.ab.hide()
 => chloe
 	
 ~ chloe
-
+$> DialogueDump.new_character()
 $> DialogueDump.play_aud("res://audio/7_chloe_intro_lines.wav")
 CHLOE: I was murdered.
 CHLOE: So, yeah, you know what to do.
@@ -402,14 +405,11 @@ else
 		=> purgatoryending_angel_1
 
 ~ angelending
-<<<<<<< HEAD
-$> DialogueDump.end() == true
-=======
+$> DialogueDump.end()
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
 $> var.endingmet == true
->>>>>>> Judge/dialogue-and-narrative
 => END
 # TODO: angelending_letter UI/asset - angelic seal/letterhead on corporate paper
 # Offer of Ascension
@@ -438,14 +438,11 @@ DEMON: I'll put in a word for you --
 DEMON: Downstairs. 
 $> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.hide()
-<<<<<<< HEAD
-$> DialogueDump.end() == true
-=======
+$> DialogueDump.end()
 $> var.endingmet == true
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
->>>>>>> Judge/dialogue-and-narrative
 => END
  
 # TODO: demonending_letter UI/asset - angelic seal/letterhead on corporate paper
@@ -472,7 +469,7 @@ DEMON: And isn't that a kind balance in itself?
 $> DialogueDump.stop_aud("res://audio/demon_talking.wav")
 $> DialogueDump.db.hide()
 <<<<<<< HEAD
-$> DialogueDump.end() == true
+$> DialogueDump.end()
 =======
 $> var.endingmet == true
 $> DialogueDump.angelending == 0
@@ -492,14 +489,11 @@ $> DialogueDump.demonending == 0
 # The Office of Purgatory
 
 ~ trueending
-<<<<<<< HEAD
-$> DialogueDump.end() == true
-=======
+$> DialogueDump.end()
 $> DialogueDump.angelending == 0
 $> DialogueDump.trueending == 0
 $> DialogueDump.demonending == 0
 $> var.endingmet == true
->>>>>>> Judge/dialogue-and-narrative
 => END
 #TODO: trueending_letter UI/asset - purgatory seal/letterhead on corporate paper
 # Notice of Termination
