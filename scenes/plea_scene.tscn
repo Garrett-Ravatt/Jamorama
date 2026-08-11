@@ -2,13 +2,28 @@
 
 [ext_resource type="Script" uid="uid://b1b3jetfqrwek" path="res://scenes/plea_scene.gd" id="1_6cslh"]
 [ext_resource type="PackedScene" uid="uid://crvkl0w8c3p2m" path="res://ui/free_balloon_II.tscn" id="1_lsh2j"]
+[ext_resource type="AudioStream" uid="uid://c8fh808j8q50w" path="res://audio/1_seamore_intro_line.wav" id="2_8h5vp"]
 [ext_resource type="Texture2D" uid="uid://bokr4grbahset" path="res://ui/Heaven_Bar_Expanded.png" id="2_gic2n"]
+[ext_resource type="AudioStream" uid="uid://bei3gf7sfpn8n" path="res://audio/2_seamore_pickup_lines.wav" id="3_bhlph"]
 [ext_resource type="Script" uid="uid://dxo1j6cy0syca" path="res://scenes/slot.gd" id="3_gic2n"]
 [ext_resource type="Texture2D" uid="uid://pvgbkyglabt7" path="res://ui/Circle_Guy.png" id="4_lsh2j"]
+[ext_resource type="AudioStream" uid="uid://blj8msgmykxvs" path="res://audio/3_robinson_intro_lines.wav" id="4_ml5vx"]
+[ext_resource type="AudioStream" uid="uid://c23svc6vmiblu" path="res://audio/4_robinson_pickup_lines.wav" id="5_e88xv"]
 [ext_resource type="Texture2D" uid="uid://cf41uyu4dunt5" path="res://icon.svg" id="5_gic2n"]
 [ext_resource type="Texture2D" uid="uid://chcesxlhq574i" path="res://ui/Hell_Bar_Expanded.png" id="5_lneks"]
 [ext_resource type="Script" uid="uid://befiy3svu1qbg" path="res://scenes/drag_object.gd" id="5_lsh2j"]
 [ext_resource type="Texture2D" uid="uid://b61tqvjy42suh" path="res://ui/Square_Guy.png" id="6_7e5hi"]
+[ext_resource type="AudioStream" uid="uid://b2ugcq25r6act" path="res://audio/5_angela_pickup_lines.wav" id="6_wj1js"]
+[ext_resource type="AudioStream" uid="uid://ca8ux7vu0i0ln" path="res://audio/6_treymour_pickup_lines.wav" id="7_ty0pj"]
+[ext_resource type="AudioStream" uid="uid://dd81jc2mnfkj5" path="res://audio/7_chloe_intro_lines.wav" id="8_vol54"]
+[ext_resource type="AudioStream" uid="uid://p1fgaf04ok1w" path="res://audio/8_chloe_pickup_lines.wav" id="9_4nlv5"]
+[ext_resource type="AudioStream" uid="uid://csnbu5w7nbwi4" path="res://audio/angel_talking.wav" id="10_7b5dw"]
+[ext_resource type="AudioStream" uid="uid://ps2cavlcgh80" path="res://audio/demon_talking.wav" id="11_8h5vp"]
+[ext_resource type="AudioStream" uid="uid://cpqhdljobkj8t" path="res://audio/droppedintoheaven.wav" id="12_prpik"]
+[ext_resource type="AudioStream" uid="uid://c0thu1ussfrw4" path="res://audio/droppedintohell.wav" id="13_kysyu"]
+[ext_resource type="AudioStream" uid="uid://dde6dfrqwgtdr" path="res://audio/main_menu.wav" id="14_y7s3j"]
+[ext_resource type="AudioStream" uid="uid://dv31psmnw1mme" path="res://audio/scroll.wav" id="15_jdbau"]
+[ext_resource type="AudioStream" uid="uid://b1mnmdtmt375b" path="res://audio/soundtrack.wav" id="16_s8vne"]
 [ext_resource type="Texture2D" uid="uid://dc63mjn7neuhi" path="res://ui/Virtue_Scroll.png" id="25_8h5vp"]
 [ext_resource type="Texture2D" uid="uid://cy50rhvwcahbc" path="res://ui/Sin_Scroll.png" id="26_bhlph"]
 [ext_resource type="Script" uid="uid://bwowwr12s4ge1" path="res://Character Blocks/CharacterManager.gd" id="27_ml5vx"]
@@ -24,6 +39,7 @@ default_font_size = 11
 
 [node name="Node2D" type="Node2D" unique_id=332241087]
 script = ExtResource("1_6cslh")
+voice_streams = Array[AudioStream]([ExtResource("2_8h5vp"), ExtResource("3_bhlph"), ExtResource("4_ml5vx"), ExtResource("5_e88xv"), ExtResource("6_wj1js"), ExtResource("7_ty0pj"), ExtResource("8_vol54"), ExtResource("9_4nlv5"), ExtResource("10_7b5dw"), ExtResource("11_8h5vp"), ExtResource("12_prpik"), ExtResource("13_kysyu"), ExtResource("14_y7s3j"), ExtResource("15_jdbau"), ExtResource("16_s8vne")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=975921864]
 visible = false
